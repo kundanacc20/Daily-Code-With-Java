@@ -4,7 +4,14 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        QueueArray queue = new QueueArray(5);
 
+        //enqueue elements
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+
+        System.out.println("front element: "+queue.peek());
         //end timer
         long endTimer = System.nanoTime();
         //program time
