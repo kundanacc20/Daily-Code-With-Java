@@ -5,7 +5,7 @@ public class Main {
         //start timer
         long startTimer = System.nanoTime();
 
-        //end timer
+        //end timern
         long endTimer = System.nanoTime();
 
         //program time
