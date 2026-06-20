@@ -4,7 +4,13 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        QueueLinkedList queue = new QueueLinkedList();
 
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+
+        System.out.println("Peek: "+queue.peek());
         //end timer
         long endTimer = System.nanoTime();
         //program time
