@@ -39,7 +39,7 @@ public class MinHeap {
     }
     public void print(){
         for(int i =0; i<size; i++){
-            System.out.println(heap[i]+" ");
+            System.out.print(heap[i]+" ");
         }
         System.out.println();
     }

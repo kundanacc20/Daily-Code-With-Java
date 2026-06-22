@@ -4,7 +4,14 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        MinHeap heap = new MinHeap(10);
 
+        heap.insert(20);
+        heap.insert(10);
+        heap.insert(5);
+        heap.insert(30);
+
+        heap.print();
         //end timer
         long endTimer = System.nanoTime();
 
