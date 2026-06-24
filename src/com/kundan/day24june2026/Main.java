@@ -4,7 +4,20 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Employee emp = new Employee("john",30,
+                new Address("Ahmedabad","gujrat"));
 
+        if(emp instanceof Employee(
+                String name,
+                int age,
+                Address(String city,
+                        String state)
+        )){
+            System.out.println(name);
+            System.out.println(age);
+            System.out.println(city);
+            System.out.println(state);
+        }
         //end timer
         long endTimer = System.nanoTime();
 
