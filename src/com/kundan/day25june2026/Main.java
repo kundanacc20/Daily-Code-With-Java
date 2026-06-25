@@ -45,6 +45,6 @@ public class Main {
         //program time
         long programTime = (endTimer - startTimer)/1_000_000;
 
-        System.out.println("program time: "+programTime+" ms");
+        System.out.println("program time: "+programTime+" ms.");
     }
 }
