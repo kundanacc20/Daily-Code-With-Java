@@ -9,6 +9,11 @@ public class Main {
             System.out.println("Running in: " + Thread.currentThread());
         });
         vThread.join();
+
+        // Method 2: Using a factory
+        Thread.Builder builder = Thread.ofVirtual().name("worker-", 0);
+        Thread t = builder.start(() -> System.out.println("Hi from virtual thread"));
+        t.join();
         //end timer
         long endTimer = System.nanoTime();
 
