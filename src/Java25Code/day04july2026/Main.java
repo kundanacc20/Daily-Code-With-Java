@@ -1,4 +1,4 @@
-package Java25VersionCode.day04july2026;
+package Java25Code.day04july2026;
 
 public class Main {
     public static  void main(String[] args) throws InterruptedException{

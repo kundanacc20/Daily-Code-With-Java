@@ -1,4 +1,4 @@
-package Java25VersionCode.FoodDeliverySystem;
+package Java25Code.FoodDeliverySystem;
 
 public class DeliveryAssigner {
     public void assignDelivery(String orderId) throws InterruptedException{

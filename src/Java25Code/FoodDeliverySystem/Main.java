@@ -1,4 +1,4 @@
-package Java25VersionCode.FoodDeliverySystem;
+package Java25Code.FoodDeliverySystem;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

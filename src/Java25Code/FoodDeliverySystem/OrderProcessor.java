@@ -1,4 +1,4 @@
-package Java25VersionCode.FoodDeliverySystem;
+package Java25Code.FoodDeliverySystem;
 
 public class OrderProcessor {
     public void processOrder(String orderId) throws InterruptedException {
