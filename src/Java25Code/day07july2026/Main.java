@@ -21,15 +21,38 @@ public class Main {
 //        System.out.println("First : "+fruits.getFirst());
 //        System.out.println("Last : "+fruits.getLast());
 
-        //addFirst() and addLast()
-        LinkedList<Integer> numbers = new LinkedList<>();
+//        //addFirst() and addLast()
+//        LinkedList<Integer> numbers = new LinkedList<>();
+//
+//        numbers.addLast(20);
+//        numbers.addLast(30);
+//        numbers.addFirst(10);
+//        numbers.addLast(40);
+//
+//        System.out.println(numbers);
 
-        numbers.addLast(20);
-        numbers.addLast(30);
-        numbers.addFirst(10);
-        numbers.addLast(40);
+//        List<String> cities = new LinkedList<>();
+//
+//        cities.add("Chennai");
+//        cities.add("Manglore");
+//        cities.add("Delhi");
+//        cities.add("Mumbai");
+//        cities.add("Pune");
+//        cities.add("Champaran");
+//        cities.add("Nalanda");
+//
+//        System.out.println(cities);
+//        System.out.println(cities.removeFirst());
+//        System.out.println(cities);
 
-        System.out.println(numbers);
+        LinkedList<String> queue = new LinkedList<>();
+
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
+        queue.removeLast();
+        System.out.println(queue);
         //end timer
         long endTimer = System.nanoTime();
 
