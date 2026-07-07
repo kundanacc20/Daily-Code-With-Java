@@ -1,6 +1,7 @@
 package Java25Code.day07july2026;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -9,16 +10,26 @@ public class Main {
         long startTimer = System.nanoTime();
         //getFirst() and getLast()
 
-        List<String> fruits = new ArrayList<>();
+//        List<String> fruits = new ArrayList<>();
+//
+//        fruits.add("apple");
+//        fruits.add("banana");
+//        fruits.add("orange");
+//        fruits.add("kiwi");
+//        fruits.add("lichi");
+//
+//        System.out.println("First : "+fruits.getFirst());
+//        System.out.println("Last : "+fruits.getLast());
 
-        fruits.add("apple");
-        fruits.add("banana");
-        fruits.add("orange");
-        fruits.add("kiwi");
-        fruits.add("lichi");
+        //addFirst() and addLast()
+        LinkedList<Integer> numbers = new LinkedList<>();
 
-        System.out.println("First : "+fruits.getFirst());
-        System.out.println("Last : "+fruits.getLast());
+        numbers.addLast(20);
+        numbers.addLast(30);
+        numbers.addFirst(10);
+        numbers.addLast(40);
+
+        System.out.println(numbers);
         //end timer
         long endTimer = System.nanoTime();
 
