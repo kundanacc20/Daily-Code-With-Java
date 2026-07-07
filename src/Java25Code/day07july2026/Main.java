@@ -45,14 +45,19 @@ public class Main {
 //        System.out.println(cities.removeFirst());
 //        System.out.println(cities);
 
-        LinkedList<String> queue = new LinkedList<>();
+//        LinkedList<String> queue = new LinkedList<>();
+//
+//        queue.add("A");
+//        queue.add("B");
+//        queue.add("C");
+//
+//        queue.removeLast();
+//        System.out.println(queue);
 
-        queue.add("A");
-        queue.add("B");
-        queue.add("C");
-
-        queue.removeLast();
-        System.out.println(queue);
+        List<Integer> lst = new ArrayList<>(List.of(1,2,3,
+                4,5,6,7,8,11,17,9));
+        System.out.println(lst);
+        System.out.println(lst.reversed());
         //end timer
         long endTimer = System.nanoTime();
 
