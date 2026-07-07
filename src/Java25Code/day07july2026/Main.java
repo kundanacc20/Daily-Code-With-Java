@@ -1,6 +1,7 @@
 package Java25Code.day07july2026;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,10 +55,27 @@ public class Main {
 //        queue.removeLast();
 //        System.out.println(queue);
 
-        List<Integer> lst = new ArrayList<>(List.of(1,2,3,
-                4,5,6,7,8,11,17,9));
-        System.out.println(lst);
-        System.out.println(lst.reversed());
+//        List<Integer> lst = new ArrayList<>(List.of(1,2,3,
+//                4,5,6,7,8,11,17,9));
+//        System.out.println(lst);
+//        System.out.println(lst.reversed());
+//        LinkedHashSet<String> set = new LinkedHashSet<>();
+//        set.add("A");
+//        set.add("b");
+//        set.add("d");
+//        set.add("e");
+//        set.add("c");
+//
+//        System.out.println(set.getFirst());
+//        System.out.println(set.getLast());
+
+        List<String> lst =  List.of("a","b","f","k","i","j");
+
+        for(String s : lst.reversed()){
+            System.out.print(s+" ");
+        }
+        System.out.println();
+
         //end timer
         long endTimer = System.nanoTime();
 
