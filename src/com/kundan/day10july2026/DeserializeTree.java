@@ -4,30 +4,35 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class DeserializeTree {
-    public TreeNode deserialize(String data){
-        if(data == null || data.isEmpty())
-            return null;
+    public TreeNode deserialize(String data) {
+        if (data == null || data.isEmpty()) return null;
 
         String[] values = data.split(",");
+        for (int j = 0; j < values.length; j++) {
+            values[j] = values[j].trim();
+        }
+
         TreeNode root = new TreeNode(Integer.parseInt(values[0]));
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
-        int i =1;
-        while(!queue.isEmpty() && i < values.length){
+        int i = 1;
+        while (!queue.isEmpty() && i < values.length) {
             TreeNode node = queue.poll();
 
-            if(!values[i].equals("null")){
+            if (!values[i].equals("null")) {
                 node.left = new TreeNode(Integer.parseInt(values[i]));
                 queue.offer(node.left);
             }
             i++;
 
-            if(i < values.length && !values[i].equals("null")){
+            if (i < values.length && !values[i].equals("null")) {
                 node.right = new TreeNode(Integer.parseInt(values[i]));
+                queue.offer(node.right);
             }
             i++;
         }
         return root;
     }
+
 }
