@@ -1,5 +1,8 @@
 package com.kundan.day11july2026;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args){
         //start timer
@@ -28,21 +31,34 @@ public class Main {
 //        d.show();
 //        d.display();
 
-        //calling static method directly from interface
-        TestInterface.info();
+//        //calling static method directly from interface
+//        TestInterface.info();
+//
+//        //using lambda expression to implement run()
+//        TestInterface t = () -> System.out.println("Running via lambda implementation");
+//        t.run();
+//
+//        //using anonymous class implementation
+//        TestInterface t2 = new TestInterface() {
+//            @Override
+//            public void run() {
+//                System.out.println("Running via anonymous class");
+//            }
+//        };
+//        t2.run();
 
-        //using lambda expression to implement run()
-        TestInterface t = () -> System.out.println("Running via lambda implementation");
-        t.run();
+        List<Employee> list = Arrays.asList(
+                new Employee("Amit",25),
+                new Employee("Ravi",35),
+                new Employee("Rohit",28)
+        );
 
-        //using anonymous class implementation
-        TestInterface t2 = new TestInterface() {
-            @Override
-            public void run() {
-                System.out.println("Running via anonymous class");
+        Predicate<Employee> ageAbove30 = e -> e.age >30;
+        for(Employee e : list){
+            if(ageAbove30.test(e)){
+                System.out.println(e.name);
             }
-        };
-        t2.run();
+        }
         //end timer
         long endTimer = System.nanoTime();
 
