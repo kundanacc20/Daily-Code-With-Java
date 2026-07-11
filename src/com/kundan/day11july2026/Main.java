@@ -4,8 +4,12 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        Calculator c = (a,b) ->a+b;
-        System.out.println(c.add(10,20));
+//        Calculator c = (a,b) ->a+b;
+//        System.out.println(c.add(10,20));
+
+        Predicate<Integer> isEven = n -> n % 2 == 0;
+        System.out.println(isEven.test(10));
+        System.out.println(isEven.test(15));
         //end timer
         long endTimer = System.nanoTime();
 
