@@ -12,9 +12,37 @@ public class Main {
 //        System.out.println(isEven.test(10));
 //        System.out.println(isEven.test(15));
 
-        //Function<T,R>
-        Function<String, Integer> lengthFinder = s -> s.length();
-        System.out.println(lengthFinder.apply("java"));
+//        //Function<T,R>
+//        Function<String, Integer> lengthFinder = s -> s.length();
+//        System.out.println(lengthFinder.apply("java"));
+
+//        //Consumer<T>
+//        Consumer<String> printer = s -> System.out.println(s);
+//        printer.accept("welcome to java 8");
+
+//        //Supplier<T>
+//        Supplier<Double> randomValue = () -> Math.random();
+//        System.out.println(randomValue.get());
+
+//        Demo d = () -> System.out.println("Abstract Method");
+//        d.show();
+//        d.display();
+
+        //calling static method directly from interface
+        TestInterface.info();
+
+        //using lambda expression to implement run()
+        TestInterface t = () -> System.out.println("Running via lambda implementation");
+        t.run();
+
+        //using anonymous class implementation
+        TestInterface t2 = new TestInterface() {
+            @Override
+            public void run() {
+                System.out.println("Running via anonymous class");
+            }
+        };
+        t2.run();
         //end timer
         long endTimer = System.nanoTime();
 
