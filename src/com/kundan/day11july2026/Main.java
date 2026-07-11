@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-
+        Calculator c = (a,b) ->a+b;
+        System.out.println(c.add(10,20));
         //end timer
         long endTimer = System.nanoTime();
 
