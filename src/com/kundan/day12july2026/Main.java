@@ -6,6 +6,7 @@ public class Main {
         long startTimer = System.nanoTime();
         //Feature 1: Always-strict floating point semantics
         System.out.println(Calculator.calculate());
+        System.out.println(Calculator.bankInterest());
         //end timer
         long endTimer = System.nanoTime();
 
