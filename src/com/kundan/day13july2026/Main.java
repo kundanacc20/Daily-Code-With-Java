@@ -18,6 +18,8 @@ public class Main {
         System.out.println("--------------Specific Generator-------------------");
         System.out.println(generator.nextInt(100));
 
+        int questionId = randomService.getRandomQuestionId();
+        System.out.println("Generated Question ID: "+questionId);
 
         //end timer
         long endTimer = System.nanoTime();

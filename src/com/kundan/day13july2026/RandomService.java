@@ -16,4 +16,8 @@ public class RandomService {
     public double getRandomDouble(){
         return random.nextDouble();
     }
+
+    public int getRandomQuestionId(){
+        return random.nextInt(1000);
+    }
 }
