@@ -4,6 +4,10 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        RandomService randomService = new RandomService();
+
+        System.out.println("Random Integer(0 - 99): "+randomService.getRandomInt(100));
+        System.out.println("Random Double(0 - 1): "+randomService.getRandomDouble());
 
         //end timer
         long endTimer = System.nanoTime();
