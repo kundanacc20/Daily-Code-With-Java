@@ -4,7 +4,15 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Human manish = new Manish();
+        Human vartika = new Vartika();
+        Human anjali = new Anjali();
+        Vartika varikaChild = new VartikaChild();
 
+        manish.printName();
+        vartika.printName();
+        anjali.printName();
+        varikaChild.printName();
         //end timer
         long endTimer = System.nanoTime();
 
