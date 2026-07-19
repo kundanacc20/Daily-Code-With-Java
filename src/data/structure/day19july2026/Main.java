@@ -7,19 +7,34 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        //Max Heap Using PriorityQueue
+//        //Max Heap Using PriorityQueue
+//
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(
+//                Collections.reverseOrder());
+//
+//        maxHeap.offer(20);
+//        maxHeap.offer(4);
+//        maxHeap.offer(50);
+//        maxHeap.offer(10);
+//
+//        while (!maxHeap.isEmpty()){
+//            System.out.println(maxHeap.poll());
+//        }
 
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(
-                Collections.reverseOrder());
+        //java provides heap implementation through PriorityQueue
 
-        maxHeap.offer(20);
-        maxHeap.offer(4);
-        maxHeap.offer(50);
-        maxHeap.offer(10);
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        while (!maxHeap.isEmpty()){
-            System.out.println(maxHeap.poll());
+        pq.offer(1);
+        pq.offer(9);
+        pq.offer(2);
+        pq.offer(8);
+        pq.offer(4);
+
+        while (!pq.isEmpty()){
+            System.out.println(pq.poll());
         }
+        
         //end timer
         long endTimer = System.nanoTime();
 
