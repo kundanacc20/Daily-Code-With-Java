@@ -4,6 +4,10 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        ValidParentheses vp = new ValidParentheses();
+
+        String s = "((([])))";
+        System.out.println(vp.isValid(s));
 
         //end timer
         long endTimer = System.nanoTime();
