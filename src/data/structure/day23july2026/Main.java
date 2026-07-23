@@ -4,7 +4,9 @@ public class Main {
  public static void main(String[] args){
      //start timer
      long startTimer = System.nanoTime();
-
+     String input = "abcabbb";
+     int result = SubstringUtil.lengthOfLongestSubstring(input);
+     System.out.println("Longest substring length: "+result);
      //end timer
      long endTimer = System.nanoTime();
 
