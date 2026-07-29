@@ -35,7 +35,19 @@ public class Main {
 //        System.out.println(finalResult);
 
         //use IntStream
-        IntStream.range(1,10).map(n -> n*n).forEach(System.out::println);
+//        IntStream.range(1,10).map(n -> n*n).forEach(System.out::println);
+
+////        3. Convert String to Uppercase
+//        List<String> words = Arrays.asList("java","microservice","saga","kafka");
+//
+//        words.stream().map(String::toUpperCase).forEach(System.out::println);
+
+//        4. Count Strings Starting With "A"
+
+        List<String> words = Arrays.asList("Angular","typescript","almond","acute","mit");
+
+        long finalResult = words.stream().filter(s -> s.startsWith("A")||s.startsWith("a")).count();
+        System.out.println(finalResult);
         //end timer
         long endTimer = System.nanoTime();
 
