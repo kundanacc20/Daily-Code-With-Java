@@ -3,6 +3,7 @@ package java8code.day29July2026;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -24,6 +25,17 @@ public class Main {
 //                .forEach(System.out::println);
 
 
+ //       2. Square Every Number
+
+//        List<Integer> numbers = Arrays.asList(2,11,9,4);
+//
+////        numbers.stream().map(n -> n*n).forEach(System.out::println);
+//        List<Integer> finalResult = numbers.stream().map(n -> n*n)
+//                .collect(Collectors.toList());
+//        System.out.println(finalResult);
+
+        //use IntStream
+        IntStream.range(1,10).map(n -> n*n).forEach(System.out::println);
         //end timer
         long endTimer = System.nanoTime();
 
