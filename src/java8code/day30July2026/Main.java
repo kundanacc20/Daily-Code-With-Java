@@ -18,15 +18,21 @@ public class Main {
 //
 //        System.out.println(finalCount);
 
-        //2. Find Maximum Number and Minimum number
+        //2. Find Maximum Number
+//
+//        List<Integer> numbers = Arrays.asList(1,2,99,189,333,999);
+//
+////        Optional<Integer> maxNumber= numbers.stream().max(Integer::compareTo);
+////        System.out.println(maxNumber);
+////
+////        Optional<Integer> minNumber = numbers.stream().min(Integer::compareTo);
+////        System.out.println(minNumber);
+//
+//        long maxNumber = numbers.stream()
+//                .mapToInt(Integer::intValue).max().orElse(-1);
+//
+//        System.out.println(maxNumber);
 
-        List<Integer> numbers = Arrays.asList(1,2,99,189,333,999);
-
-        Optional<Integer> maxNumber= numbers.stream().max(Integer::compareTo);
-        System.out.println(maxNumber);
-
-        Optional<Integer> minNumber = numbers.stream().min(Integer::compareTo);
-        System.out.println(minNumber);
         //end timer
         long endTimer = System.nanoTime();
 
