@@ -15,9 +15,19 @@ public class Main {
 //                .get();
 //        System.out.println(finalSum);
 
-        long sum = numbers.stream()
-                .reduce(0,(a,b)->a+b);
-        System.out.println(sum);
+//        long sum = numbers.stream()
+//                //using lambda
+////                .reduce(0,(a,b)->a+b);
+//        .reduce(0, Integer::sum);
+//        System.out.println(sum);
+//        System.out.println(((Object) sum).getClass().getName());
+
+        long finalSum = numbers.stream()
+                .mapToLong(Integer::longValue)
+                .sum();
+
+        System.out.println(finalSum);
+        System.out.println(((Object) finalSum).getClass().getName());
         //end timer
         long endTimer = System.nanoTime();
 
