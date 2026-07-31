@@ -1,9 +1,6 @@
 package java8code.day31July2026;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
-import java.util.OptionalLong;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
@@ -48,6 +45,14 @@ public class Main {
 //                .orElse(0.0);
 //
 //        System.out.println(avgFinalDouble);
+
+//        3. Remove Duplicate Numbers, use distinct()
+
+        List<Integer> numberListWithDuplicate = Arrays.asList(1,9,2,2,9,5,21,8,9);
+
+        List<Integer> finalListWithoutDuplicate = numberListWithDuplicate.stream().distinct()
+                .toList();
+        System.out.println(finalListWithoutDuplicate);
 
 
         //end timer
