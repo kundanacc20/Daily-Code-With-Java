@@ -1,9 +1,9 @@
 package java8code.day01August2026;
 
 public class Employee implements Comparable<Employee>{
-    int id;
-    String name;
-    long salary;
+   private int id;
+   private String name;
+   private long salary;
 
     public Employee(int id, String name, long salary){
         this.id = id;
