@@ -1,9 +1,6 @@
 package java8code.day03August2026;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
@@ -11,13 +8,21 @@ public class Main {
         long startTimer = System.nanoTime();
 //        1. Find Highest Salary Employee
         List<Employee> emplist = Arrays.asList(new Employee(1,"kundan",1000000),
-                new Employee(2,"harshit singh",100000),
-                new Employee(3,"narayan",100000),
-                new Employee(4,"vivek chaurasiya",100000));
+                new Employee(2,"harshit singh",100006),
+                new Employee(3,"narayan",100005),
+                new Employee(4,"vivek chaurasiya",100009));
 
-        Employee maxSalary = emplist.stream().max(Comparator.comparingLong(Employee::getSalary))
-                .orElseThrow(() -> new RuntimeException("No employee found"));
-        System.out.println(maxSalary);
+//        Employee maxSalary = emplist.stream().max(Comparator.comparingLong(Employee::getSalary))
+//                .orElseThrow(() -> new RuntimeException("No employee found"));
+//        System.out.println(maxSalary);
+
+//        2. Find Second Highest Salary
+
+        Optional<Employee> secondHighestSalary = emplist.stream()
+                .sorted(Comparator.comparingLong(Employee::getSalary).reversed())
+                .skip(1).findFirst();
+
+        System.out.println(secondHighestSalary);
         //end timer
         long endTimer = System.nanoTime();
 
