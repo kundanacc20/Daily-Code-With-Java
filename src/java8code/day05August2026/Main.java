@@ -19,6 +19,10 @@ public class Main {
 
         System.out.println(finalEmpList);
 
+        //get employee by dept = developer
+
+        List<Employees> devDept = finalEmpList.get("developer");
+        System.out.println("developers : "+devDept);
         //end timer
         long endTimer = System.nanoTime();
 
