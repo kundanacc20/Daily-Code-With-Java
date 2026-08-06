@@ -4,8 +4,11 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        NumberThread nt = new NumberThread();
-        nt.start();
+//        NumberThread nt = new NumberThread();
+//        nt.start();
+
+        Thread thread = new Thread(new  HelloTask());
+        thread.start();
 
         for(int i =1; i<= 10; i++){
             System.out.println("Main Thread: ");
