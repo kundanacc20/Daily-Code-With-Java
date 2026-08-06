@@ -23,12 +23,12 @@ public class Main {
 
         Map<String,List<Employee>> empByDept=
                 emplst.stream()
-                        .collect(Collectors.groupingBy(Employee::getDept));
+                        .collect(Collectors.groupingBy(Employee::dept));
         System.out.println(empByDept);
 
-        empByDept.forEach((dept, employeeListst) ->{
+        empByDept.forEach((dept, employeeList) ->{
             System.out.println("department : "+dept);
-            employeeListst.forEach(System.out::println);
+            employeeList.forEach(System.out::println);
             System.out.println("-------------------------");
 
         });
