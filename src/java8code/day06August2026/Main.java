@@ -13,25 +13,32 @@ public class Main {
         long startTimer = System.nanoTime();
 //        1. Count Employees Department Wise
         List<Employee> emplst = Arrays.asList(
-                new Employee(101,"kundan","developer"),
-                new Employee(102,"harshit","marketing"),
-                new Employee(103, "abhishek","realstate"),
-                new Employee(104,"devendra","talent dept"),
-                new Employee(105,"kunal","talent dept"),
-                new Employee(106,"upadhdhya","realstate")
+                new Employee(101,"kundan","developer",1000000),
+                new Employee(102,"harshit","marketing",70000),
+                new Employee(103, "abhishek","realstate",90000),
+                new Employee(104,"devendra","talent dept",60000),
+                new Employee(105,"kunal","talent dept",50000),
+                new Employee(106,"upadhdhya","realstate",80000)
         );
 
-        Map<String,List<Employee>> empByDept=
-                emplst.stream()
-                        .collect(Collectors.groupingBy(Employee::dept));
-        System.out.println(empByDept);
+//        Map<String,List<Employee>> empByDept=
+//                emplst.stream()
+//                        .collect(Collectors.groupingBy(Employee::dept));
+//        System.out.println(empByDept);
+//
+//        empByDept.forEach((dept, employeeList) ->{
+//            System.out.println("department : "+dept);
+//            employeeList.forEach(System.out::println);
+//            System.out.println("-------------------------");
+//
+//        });
 
-        empByDept.forEach((dept, employeeList) ->{
-            System.out.println("department : "+dept);
-            employeeList.forEach(System.out::println);
-            System.out.println("-------------------------");
+        Map<Boolean, List<Employee>> empBySalary = emplst.stream()
+                .collect(Collectors.partitioningBy(e ->e.salary()>60000));
 
-        });
+        System.out.println("employee who's salary is greater than 60000: "+empBySalary.get(true));
+        System.out.println("employee who's salary is less than 60000: "+empBySalary.get(false));
+
         //end timer
         long endTimer = System.nanoTime();
 
