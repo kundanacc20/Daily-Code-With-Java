@@ -4,7 +4,20 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Thread thread = new Thread(MyRunnableTask.createTask("Hello Thread"));
 
+        thread.start();
+
+        Runnable mainTask = MyRunnableTask.createTask("Hello from Main");
+        mainTask.run();
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            System.out.println("Join interrupted");
+        }
+
+        System.out.println("Both threads finished execution!");
         //end timer
         long endTimer = System.nanoTime();
 
