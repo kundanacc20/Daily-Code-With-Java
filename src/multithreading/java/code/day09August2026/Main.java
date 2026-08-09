@@ -15,13 +15,19 @@ public class Main {
 //        worker.join();
 //        System.out.println("worker finished");
 
-        YieldThread t = new YieldThread();
+//        YieldThread t = new YieldThread();
+//
+//        t.start();
+//
+//        for(int i =0; i <= 4; i++){
+//            System.out.println("Main thread: "+i);
+//        }
 
-        t.start();
+        DaemonTask task = new DaemonTask();
 
-        for(int i =0; i <= 4; i++){
-            System.out.println("Main thread: "+i);
-        }
+        task.start();
+
+        System.out.println("Main finished");
         //end timer
         long endTimer = System.nanoTime();
 
