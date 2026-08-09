@@ -9,11 +9,19 @@ public class Main {
 //            Thread.sleep(2000);
 //        }
 
-        Worker worker = new Worker();
+//        Worker worker = new Worker();
+//
+//        worker.start();
+//        worker.join();
+//        System.out.println("worker finished");
 
-        worker.start();
-        worker.join();
-        System.out.println("worker finished");
+        YieldThread t = new YieldThread();
+
+        t.start();
+
+        for(int i =0; i <= 4; i++){
+            System.out.println("Main thread: "+i);
+        }
         //end timer
         long endTimer = System.nanoTime();
 
