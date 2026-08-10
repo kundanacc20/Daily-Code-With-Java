@@ -29,14 +29,17 @@ public class Main {
 //                ));
 //        System.out.println(similarWordCount);
 
-        Map<Integer, Set<String>> groupByWordLength = wordList.stream()
-                .collect(Collectors.groupingBy(
-                        String::length,
-                        Collectors.toSet()
-                ));
+//        Map<Integer, Set<String>> groupByWordLength = wordList.stream()
+//                .collect(Collectors.groupingBy(
+//                        String::length,
+//                        Collectors.toSet()
+//                ));
 
-        System.out.println(groupByWordLength);
+//        System.out.println(groupByWordLength);
 
+//         Join Strings
+
+        System.out.println(wordList.stream().collect(Collectors.joining(",")));
         //end timer
         long endTimer = System.nanoTime();
 
