@@ -2,9 +2,7 @@ package java8code.day11August2026;
 
 import com.kundan.day26may2026.LinkedList;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -12,27 +10,49 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        String word = "programming";
 
-        Map<Character,Long> wordMap = word.chars()
-                .mapToObj(c ->(char)c)
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ));
+////         Find First Non-Repeated Character
+//
+//        String word = "programming";
+//
+//        Map<Character,Long> wordMap = word.chars()
+//                .mapToObj(c ->(char)c)
+//                .collect(Collectors.groupingBy(
+//                        Function.identity(),
+//                        Collectors.counting()
+//                ));
+//
+//        System.out.println(wordMap);
+//
+//        Optional<Character> firstNonRepeatedCharacter = wordMap.entrySet()
+//                .stream().filter(e -> e.getValue()==1)
+//                .map(Map.Entry::getKey)
+//                .findFirst();
+//        System.out.println(firstNonRepeatedCharacter);
 
-        System.out.println(wordMap);
+//        First Non-Repeated Character in Usernames
 
-        Optional<Character> firstNonRepeatedCharacter = wordMap.entrySet()
-                .stream().filter(e -> e.getValue()==1)
-                .map(Map.Entry::getKey)
-                .findFirst();
-        System.out.println(firstNonRepeatedCharacter);
+        List<String> wordList = Arrays.asList("bob","marly","narayan","kundan","arun","harshit","aaditya");
+
+        wordList.forEach(word ->{
+            Optional<Character> firstUnique = word.chars()
+                    .mapToObj(i -> (char)i)
+                    .collect(Collectors.groupingBy(
+                            Function.identity(),
+                            LinkedHashMap::new,
+                            Collectors.counting()
+                    ))
+                    .entrySet().stream()
+                    .filter(e ->e.getValue()==1)
+                    .map(Map.Entry::getKey)
+                    .findFirst();
+            System.out.println(word+ " first unique character: "+firstUnique.orElse(null));
+        });
         //end timer
         long endTimer = System.nanoTime();
 
         //program time
-        long programTime = System.nanoTime();
+        long programTime = (endTimer -startTimer)/1_000_000;
 
         System.out.println("program time: "+programTime+" ms");
     }
