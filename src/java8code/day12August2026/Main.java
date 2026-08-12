@@ -43,21 +43,31 @@ public class Main {
 
 //         Find Duplicate Characters
 
-        String word = "programming";
+//        String word = "programming";
+//
+//        Map<Character,Long> letterFrequencyMap = word.chars()
+//                .mapToObj(i -> (char)i)
+//                .collect(Collectors.groupingBy(
+//                        Function.identity(),
+//                        Collectors.counting()
+//                ));
+//        System.out.println(letterFrequencyMap);
+//
+//        Set<Character> finalResult = letterFrequencyMap.entrySet()
+//                .stream().filter(e -> e.getValue() >1)
+//                .map(Map.Entry::getKey)
+//                .collect(Collectors.toSet());
+//        System.out.println(finalResult);
 
-        Map<Character,Long> letterFrequencyMap = word.chars()
-                .mapToObj(i -> (char)i)
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ));
-        System.out.println(letterFrequencyMap);
+        String word = "what's the word, bird is the word";
 
-        Set<Character> finalResult = letterFrequencyMap.entrySet()
-                .stream().filter(e -> e.getValue() >1)
-                .map(Map.Entry::getKey)
+        Set<Character> wordSet = new HashSet<>();
+
+        Set<Character> duplicates = word.chars()
+                .mapToObj(c -> (char)c)
+                .filter(c -> !wordSet.add(c))
                 .collect(Collectors.toSet());
-        System.out.println(finalResult);
+        System.out.println(duplicates);
 
         //end timer
         long endTimer = System.nanoTime();
