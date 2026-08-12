@@ -1,9 +1,6 @@
 package java8code.day12August2026;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -59,16 +56,23 @@ public class Main {
 //                .collect(Collectors.toSet());
 //        System.out.println(finalResult);
 
-        String word = "what's the word, bird is the word";
+//        String word = "what's the word, bird is the word";
+//
+//        Set<Character> wordSet = new HashSet<>();
+//
+//        Set<Character> duplicates = word.chars()
+//                .mapToObj(c -> (char)c)
+//                .filter(c -> !wordSet.add(c))
+//                .collect(Collectors.toSet());
+//        System.out.println(duplicates);
 
-        Set<Character> wordSet = new HashSet<>();
+//         Find Longest String
+        List<String> wordList = Arrays.asList("java","sql","Microservice","saga","golang","rust");
 
-        Set<Character> duplicates = word.chars()
-                .mapToObj(c -> (char)c)
-                .filter(c -> !wordSet.add(c))
-                .collect(Collectors.toSet());
-        System.out.println(duplicates);
+        Optional<String> maxWord = wordList.stream()
+                .max(Comparator.comparingInt(String::length));
 
+        System.out.println(maxWord.orElse(null));
         //end timer
         long endTimer = System.nanoTime();
 
