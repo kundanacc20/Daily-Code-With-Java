@@ -41,6 +41,23 @@ public class Main {
 //
 //        System.out.println(firstRepetedCharacter.orElse(null));
 
+//         Find Duplicate Characters
+
+        String word = "programming";
+
+        Map<Character,Long> letterFrequencyMap = word.chars()
+                .mapToObj(i -> (char)i)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+        System.out.println(letterFrequencyMap);
+
+        Set<Character> finalResult = letterFrequencyMap.entrySet()
+                .stream().filter(e -> e.getValue() >1)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
+        System.out.println(finalResult);
 
         //end timer
         long endTimer = System.nanoTime();
