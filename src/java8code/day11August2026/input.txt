@@ -1,0 +1,7 @@
+A microservice is a small, independent, and loosely coupled service
+that performs a specific business function within a larger application
+ecosystem. Each microservice runs in its own proces
+communicates with others through lightweight protocols such as HTTP or
+messaging queues, and can be developed, deployed, and scaled independently.
+This architecture promotes modularity, enabling teams to work on different
+services simultaneously without interfering with each other.
