@@ -35,15 +35,26 @@ public class Main {
 //
 //        System.out.println(mergedSet);
 
-        //Stream and stream
+//        //Stream and stream
+//
+//        List<String> wordList = Arrays.asList("kundan","kumar","harshit","singh","harishankar","chauhan");
+//
+//        Stream<String> wordStartWithK = wordList.stream();
+//
+//        wordStartWithK.filter(e -> e.startsWith("k"))
+//                .forEach(System.out::println);
 
-        List<String> wordList = Arrays.asList("kundan","kumar","harshit","singh","harishankar","chauhan");
+//        Flatten Nested Lists
+        List<List<Integer>> listOfList = Arrays.asList(
+                Arrays.asList(1,2,3,7),
+                Arrays.asList(9,1,5,2,8),
+                Arrays.asList(10,11,2,9)
+        );
 
-        Stream<String> wordStartWithK = wordList.stream();
+        List<Integer> flatList = listOfList.stream().flatMap(List::stream)
+                .collect(Collectors.toList());
 
-        wordStartWithK.filter(e -> e.startsWith("k"))
-                .forEach(System.out::println);
-
+        System.out.println(flatList);
 
         //end timer
         long endTimer = System.nanoTime();
