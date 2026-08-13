@@ -23,12 +23,17 @@ public class Main {
         List<Integer> firstList = Arrays.asList(1,2,3,4,1,8,9);
         List<Integer> secondList = Arrays.asList(1,2,7,10,11,12,16,18);
 
-        Set<Integer> finalListWithoutDuplicate = Stream
-                .concat(firstList.stream(),secondList.stream())
-                .collect(Collectors.toSet());
+//        Set<Integer> finalListWithoutDuplicate = Stream
+//                .concat(firstList.stream(),secondList.stream())
+//                .collect(Collectors.toSet());
+//
+//
+//        System.out.println(finalListWithoutDuplicate);
 
+        Set<Integer> mergedSet = new HashSet<>(firstList);
+        mergedSet.addAll(secondList);
 
-        System.out.println(finalListWithoutDuplicate);
+        System.out.println(mergedSet);
 
         //end timer
         long endTimer = System.nanoTime();
