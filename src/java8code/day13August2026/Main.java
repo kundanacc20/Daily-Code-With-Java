@@ -19,21 +19,31 @@ public class Main {
 //
 //        System.out.println(commonList);
 
-//        Merge Two Lists Without Duplicates
-        List<Integer> firstList = Arrays.asList(1,2,3,4,1,8,9);
-        List<Integer> secondList = Arrays.asList(1,2,7,10,11,12,16,18);
-
-//        Set<Integer> finalListWithoutDuplicate = Stream
-//                .concat(firstList.stream(),secondList.stream())
-//                .collect(Collectors.toSet());
+////        Merge Two Lists Without Duplicates
+//        List<Integer> firstList = Arrays.asList(1,2,3,4,1,8,9);
+//        List<Integer> secondList = Arrays.asList(1,2,7,10,11,12,16,18);
 //
+////        Set<Integer> finalListWithoutDuplicate = Stream
+////                .concat(firstList.stream(),secondList.stream())
+////                .collect(Collectors.toSet());
+////
+////
+////        System.out.println(finalListWithoutDuplicate);
 //
-//        System.out.println(finalListWithoutDuplicate);
+//        Set<Integer> mergedSet = new HashSet<>(firstList);
+//        mergedSet.addAll(secondList);
+//
+//        System.out.println(mergedSet);
 
-        Set<Integer> mergedSet = new HashSet<>(firstList);
-        mergedSet.addAll(secondList);
+        //Stream and stream
 
-        System.out.println(mergedSet);
+        List<String> wordList = Arrays.asList("kundan","kumar","harshit","singh","harishankar","chauhan");
+
+        Stream<String> wordStartWithK = wordList.stream();
+
+        wordStartWithK.filter(e -> e.startsWith("k"))
+                .forEach(System.out::println);
+
 
         //end timer
         long endTimer = System.nanoTime();
