@@ -44,17 +44,17 @@ public class Main {
 //        wordStartWithK.filter(e -> e.startsWith("k"))
 //                .forEach(System.out::println);
 
-//        Flatten Nested Lists
-        List<List<Integer>> listOfList = Arrays.asList(
-                Arrays.asList(1,2,3,7),
-                Arrays.asList(9,1,5,2,8),
-                Arrays.asList(10,11,2,9)
-        );
-
-        List<Integer> flatList = listOfList.stream().flatMap(List::stream)
-                .collect(Collectors.toList());
-
-        System.out.println(flatList);
+////        Flatten Nested Lists
+//        List<List<Integer>> listOfList = Arrays.asList(
+//                Arrays.asList(1,2,3,7),
+//                Arrays.asList(9,1,5,2,8),
+//                Arrays.asList(10,11,2,9)
+//        );
+//
+//        List<Integer> flatList = listOfList.stream().flatMap(List::stream)
+//                .collect(Collectors.toList());
+//
+//        System.out.println(flatList);
 
         //end timer
         long endTimer = System.nanoTime();
