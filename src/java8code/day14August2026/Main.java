@@ -2,6 +2,7 @@ package java8code.day14August2026;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args){
@@ -13,11 +14,18 @@ public class Main {
 //
 //        System.out.println(sum);
 
-        //string concatination
-        List<String> wordList = Arrays.asList("kundan"," kumar", " java "," developer ");
+//        //string concatination
+//        List<String> wordList = Arrays.asList("kundan"," kumar", " java "," developer ");
+//
+//        String finalWord = wordList.stream().reduce("",String::concat);
+//        System.out.println(finalWord);
 
-        String finalWord = wordList.stream().reduce("",String::concat);
-        System.out.println(finalWord);
+        //Finding maximum
+        List<Integer> numberList = Arrays.asList(1,9999,89,98,110,428,500);
+
+        Optional<Integer> maxNumber = numberList.stream().reduce(Integer::max);
+
+        System.out.println(maxNumber);
         //end timer
         long endTimer = System.nanoTime();
 
