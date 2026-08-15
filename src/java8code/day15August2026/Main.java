@@ -1,6 +1,7 @@
 package java8code.day15August2026;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -35,13 +36,24 @@ public class Main {
 //
 //        System.out.println(finalMappedList);
 
-//         Find Top 3 Highest Numbers
-        List<Integer> numlst = Arrays.asList(1,9,2,11,12,19,17,14);
+////         Find Top 3 Highest Numbers
+//        List<Integer> numlst = Arrays.asList(1,9,2,11,12,19,17,14);
+//
+//        List<Integer> top3NumInList = numlst.stream().sorted((a,b) -> b - a)
+//                .limit(3).toList();
+//
+//        System.out.println(top3NumInList);
 
-        List<Integer> top3NumInList = numlst.stream().sorted((a,b) -> b - a)
-                .limit(3).toList();
+//         Find Employee with Longest Name
 
-        System.out.println(top3NumInList);
+        List<Employee> empList = Arrays.asList(new Employee("Kundan", "software", 27),
+                new Employee("narayan","beam executive",21),
+                new Employee("anil", "data analyst",21));
+
+        Optional<Employee> longestEmpName = empList.stream()
+                .max(Comparator.comparing(Employee::name));
+
+        System.out.println(longestEmpName);
 
 
         //end timer
