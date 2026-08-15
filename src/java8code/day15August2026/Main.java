@@ -1,8 +1,6 @@
 package java8code.day15August2026;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -27,6 +25,16 @@ public class Main {
 //        List<Integer> finalList = listOfList.stream().flatMap(List::stream)
 //                .collect(Collectors.toList());
 //        System.out.println(finalList);
+
+        Map<Integer , List<String>> mapListOfWords = new HashMap<>();
+        mapListOfWords.put(1,Arrays.asList("kundan","sailesh","narayan"));
+        mapListOfWords.put(2,Arrays.asList("bhaushaheb","aditya","rajak","satyam"));
+
+        List<String> finalMappedList = mapListOfWords.values().stream()
+                .flatMap(List::stream).collect(Collectors.toList());
+
+        System.out.println(finalMappedList);
+
 
         //end timer
         long endTimer = System.nanoTime();
