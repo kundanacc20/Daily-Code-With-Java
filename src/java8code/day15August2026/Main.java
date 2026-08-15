@@ -26,14 +26,22 @@ public class Main {
 //                .collect(Collectors.toList());
 //        System.out.println(finalList);
 
-        Map<Integer , List<String>> mapListOfWords = new HashMap<>();
-        mapListOfWords.put(1,Arrays.asList("kundan","sailesh","narayan"));
-        mapListOfWords.put(2,Arrays.asList("bhaushaheb","aditya","rajak","satyam"));
+//        Map<Integer , List<String>> mapListOfWords = new HashMap<>();
+//        mapListOfWords.put(1,Arrays.asList("kundan","sailesh","narayan"));
+//        mapListOfWords.put(2,Arrays.asList("bhaushaheb","aditya","rajak","satyam"));
+//
+//        List<String> finalMappedList = mapListOfWords.values().stream()
+//                .flatMap(List::stream).collect(Collectors.toList());
+//
+//        System.out.println(finalMappedList);
 
-        List<String> finalMappedList = mapListOfWords.values().stream()
-                .flatMap(List::stream).collect(Collectors.toList());
+//         Find Top 3 Highest Numbers
+        List<Integer> numlst = Arrays.asList(1,9,2,11,12,19,17,14);
 
-        System.out.println(finalMappedList);
+        List<Integer> top3NumInList = numlst.stream().sorted((a,b) -> b - a)
+                .limit(3).toList();
+
+        System.out.println(top3NumInList);
 
 
         //end timer
