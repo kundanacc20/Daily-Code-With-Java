@@ -51,9 +51,10 @@ public class Main {
                 new Employee("anil", "data analyst",21));
 
         Optional<Employee> longestEmpName = empList.stream()
-                .max(Comparator.comparing(Employee::name));
+//                .max(Comparator.comparing(Employee::name));
+        .max(Comparator.comparingInt(e->e.name().length()));
 
-        System.out.println(longestEmpName);
+        System.out.println(longestEmpName.orElse(null));
 
 
         //end timer
