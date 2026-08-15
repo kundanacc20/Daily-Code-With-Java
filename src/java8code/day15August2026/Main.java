@@ -3,6 +3,7 @@ package java8code.day15August2026;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args){
@@ -18,10 +19,15 @@ public class Main {
         List<List<Integer>> listOfList = Arrays.asList(Arrays.asList(1,2,3,4),
                 Arrays.asList(5,6,7),
                 Arrays.asList(8,9,10));
+//
+//        listOfList.stream().flatMap(Collection::stream)
+////                .forEach(System.out::print);
+//                .forEach(n -> System.out.print(n+ " ");
 
-        listOfList.stream().flatMap(Collection::stream)
-//                .forEach(System.out::print);
-                .forEach(n -> System.out.print(n+ " "));
+//        List<Integer> finalList = listOfList.stream().flatMap(List::stream)
+//                .collect(Collectors.toList());
+//        System.out.println(finalList);
+
         //end timer
         long endTimer = System.nanoTime();
         System.out.println();
