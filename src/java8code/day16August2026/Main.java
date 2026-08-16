@@ -104,17 +104,31 @@ public class Main {
 //
 //        System.out.println(highestPaidEmp.name());
 
-//        Find lowest-paid employee.
-        Employee lowestPaidEmp = employeeList.stream()
-                .min(Comparator.comparing(Employee::salary))
-                .orElseThrow(()->new RuntimeException("no such employee found"));
+////        Find lowest-paid employee.
+//        Employee lowestPaidEmp = employeeList.stream()
+//                .min(Comparator.comparing(Employee::salary))
+//                .orElseThrow(()->new RuntimeException("no such employee found"));
+//
+//        System.out.println(lowestPaidEmp.name());
+//
+//        Employee lowestPaidEmployee = employeeList.stream()
+//                .reduce((emp1, emp2) -> emp1.salary() < emp2.salary() ? emp1:emp2)
+//                .orElseThrow(() -> new RuntimeException("no such employee found"));
+//        System.out.println("lowest paid employee: "+lowestPaidEmployee.name()+" ji");
 
-        System.out.println(lowestPaidEmp.name());
+////        Find average salary.
+//        Double avgSalary = employeeList.stream()
+//                .collect(Collectors.averagingLong(Employee::salary));
+//        System.out.println(avgSalary);
 
-        Employee lowestPaidEmployee = employeeList.stream()
-                .reduce((emp1, emp2) -> emp1.salary() < emp2.salary() ? emp1:emp2)
-                .orElseThrow(() -> new RuntimeException("no such employee found"));
-        System.out.println("lowest paid employee: "+lowestPaidEmployee.name()+" ji");
+
+        //find Average salary by department
+        Map<String, Double> avgSalaryByDept = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::department,Collectors.averagingDouble(Employee::salary)));
+
+//        System.out.println(avgSalaryByDept);
+        avgSalaryByDept.forEach((dept, avgSalary) ->
+                System.out.println("Department: "+dept+" | avgerage salary: "+avgSalary));
         //end timer
         long endTimer = System.nanoTime();
 
