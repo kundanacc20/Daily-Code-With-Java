@@ -47,12 +47,19 @@ public class Main {
 //                .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()));
 //        System.out.println(finalCountOfMaleFemaleEmployee);
 
-//        List all departments.
+////        List all departments.
+//
+//        Set<String> deptList = employeeList.stream()
+//                .map(employee -> employee.department())
+//                .collect(Collectors.toSet());
+//        System.out.println(deptList);
 
-        Set<String> deptList = employeeList.stream()
-                .map(employee -> employee.department())
-                .collect(Collectors.toSet());
+        List<String> deptList = employeeList.stream()
+                .map(Employee::department)
+                .distinct()
+                .collect(Collectors.toList());
         System.out.println(deptList);
+
 
         //end timer
         long endTimer = System.nanoTime();
