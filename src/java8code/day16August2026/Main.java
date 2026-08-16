@@ -76,11 +76,14 @@ public class Main {
 //                        .orElse(0);
 //        System.out.println(avgAge);
 
-//        Find average age by gender.
-        Map<String, Double> avgAge = employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::department, Collectors.averagingDouble(Employee::age)));
-
-        System.out.println(avgAge);
+////        Find average age by gender.
+//        Map<String, Double> avgAge = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::gender, Collectors.averagingInt(Employee::age)));
+//
+////        System.out.println(avgAge);
+//
+//        avgAge.forEach((department, averageAge)->
+//                System.out.println("Department: "+department+ " | average age: "+averageAge));
 
         //end timer
         long endTimer = System.nanoTime();
