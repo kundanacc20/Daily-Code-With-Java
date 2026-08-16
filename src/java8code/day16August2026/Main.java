@@ -122,13 +122,26 @@ public class Main {
 //        System.out.println(avgSalary);
 
 
-        //find Average salary by department
-        Map<String, Double> avgSalaryByDept = employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::department,Collectors.averagingDouble(Employee::salary)));
+//        //find Average salary by department
+//        Map<String, Double> avgSalaryByDept = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::department,Collectors.averagingDouble(Employee::salary)));
+//
+////        System.out.println(avgSalaryByDept);
+//        avgSalaryByDept.forEach((dept, avgSalary) ->
+//                System.out.println("Department: "+dept+" | avgerage salary: "+avgSalary));
 
-//        System.out.println(avgSalaryByDept);
-        avgSalaryByDept.forEach((dept, avgSalary) ->
-                System.out.println("Department: "+dept+" | avgerage salary: "+avgSalary));
+////        Find employees who joined after 2020.
+//        List<Employee> empJoinedAfter2020 = employeeList.stream()
+//                .filter(e->e.joiningDate().isAfter(LocalDate.of(2020,1,1)))
+//                .toList();
+//
+        // i want only names of employee
+        List<String> namesOfEmpWhoJoinedAfter2020 = employeeList.stream()
+                .filter(emp -> emp.joiningDate().isAfter(LocalDate.of(2020,1,1)))
+                        .map(Employee::name)
+                                .toList();
+//        empJoinedAfter2020.forEach(System.out::println);
+        System.out.println(namesOfEmpWhoJoinedAfter2020);
         //end timer
         long endTimer = System.nanoTime();
 
