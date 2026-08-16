@@ -62,12 +62,12 @@ public class Main {
 
         //Count employees in each department.
 
-//        Map<String,Long> empInEachDept = employeeList.stream()
-//                .collect(Collectors.groupingBy(Employee::department, Collectors.counting()));
-//
+        Map<String,Long> empInEachDept = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::department, Collectors.counting()));
+
 //        System.out.println(empInEachDept);
-
-
+        empInEachDept.forEach((dept, count)->
+                System.out.println("Department: "+dept+" | count : "+count));
 
 
         //end timer
