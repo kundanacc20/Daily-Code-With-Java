@@ -3,6 +3,9 @@ package java8code.day16August2026;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args){
@@ -32,7 +35,15 @@ public class Main {
                 new Employee(120, "Shreya", "HR", "Female", 60000, LocalDate.of(2021, 6, 17), "Mumbai")
         );
 
-        employeeList.forEach(System.out::println);
+//        employeeList.forEach(System.out::println);
+
+        //------------------------------------------------------------------------
+        //Count male and female employees.
+        Map<String,List<Employee>> countOfMaleEmployee = employeeList.stream()
+                .collect(Collectors.groupingBy(employee -> employee.gender()
+        ));
+
+        System.out.println(countOfMaleEmployee);
         //end timer
         long endTimer = System.nanoTime();
 
