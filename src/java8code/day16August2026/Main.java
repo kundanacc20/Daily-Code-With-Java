@@ -69,12 +69,19 @@ public class Main {
 //        empInEachDept.forEach((dept, count)->
 //                System.out.println("Department: "+dept+" | count : "+count));
 
+////        Find average age.
+//        double  avgAge = employeeList.stream()
+//                .mapToInt(Employee::age)
+//                .average()
+//                        .orElse(0);
+//        System.out.println(avgAge);
+
 //        Find average age by gender.
-        double  avgAge = employeeList.stream()
-                .mapToInt(Employee::age)
-                .average()
-                        .orElse(0);
+        Map<String, Double> avgAge = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::department, Collectors.averagingDouble(Employee::age)));
+
         System.out.println(avgAge);
+
         //end timer
         long endTimer = System.nanoTime();
 
