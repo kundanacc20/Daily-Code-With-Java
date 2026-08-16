@@ -54,11 +54,20 @@ public class Main {
 //                .collect(Collectors.toSet());
 //        System.out.println(deptList);
 
-        List<String> deptList = employeeList.stream()
-                .map(Employee::department)
-                .distinct()
-                .collect(Collectors.toList());
-        System.out.println(deptList);
+//        List<String> deptList = employeeList.stream()
+//                .map(Employee::department)
+//                .distinct()
+//                .collect(Collectors.toList());
+//        System.out.println(deptList);
+
+        //Count employees in each department.
+
+//        Map<String,Long> empInEachDept = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::department, Collectors.counting()));
+//
+//        System.out.println(empInEachDept);
+
+
 
 
         //end timer
