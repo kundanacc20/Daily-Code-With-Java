@@ -38,12 +38,16 @@ public class Main {
 //        employeeList.forEach(System.out::println);
 
         //------------------------------------------------------------------------
-        //Count male and female employees.
-        Map<String,List<Employee>> countOfMaleEmployee = employeeList.stream()
-                .collect(Collectors.groupingBy(employee -> employee.gender()
-        ));
+//        //Count male and female employees.
+//        Map<String,List<Employee>> countOfMaleEmployee = employeeList.stream()
+//                .collect(Collectors.groupingBy(employee -> employee.gender()
+//        ));
+//
+//        System.out.println(countOfMaleEmployee);
 
-        System.out.println(countOfMaleEmployee);
+//        Map<String,Long> finalCountOfMaleFemaleEmployee = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()));
+//        System.out.println(finalCountOfMaleFemaleEmployee);
         //end timer
         long endTimer = System.nanoTime();
 
