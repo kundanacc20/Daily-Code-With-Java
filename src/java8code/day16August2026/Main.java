@@ -1,9 +1,7 @@
 package java8code.day16August2026;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -48,6 +46,14 @@ public class Main {
 //        Map<String,Long> finalCountOfMaleFemaleEmployee = employeeList.stream()
 //                .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()));
 //        System.out.println(finalCountOfMaleFemaleEmployee);
+
+//        List all departments.
+
+        Set<String> deptList = employeeList.stream()
+                .map(employee -> employee.department())
+                .collect(Collectors.toSet());
+        System.out.println(deptList);
+
         //end timer
         long endTimer = System.nanoTime();
 
