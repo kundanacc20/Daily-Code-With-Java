@@ -1,9 +1,10 @@
 package java8code.day16August2026;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public record Employee(int id, String name, String department, String gender, int salary, Date joiningYear, String city) {
+public record Employee(int id, String name, String department, String gender, int salary, LocalDate joiningDate, String city) {
 }
+
 
 //Create an Employee class with:
 //id
@@ -13,3 +14,8 @@ public record Employee(int id, String name, String department, String gender, in
 //salary
 //joiningYear
 //city
+
+
+//---------------
+//Author
+//kundan kumar
