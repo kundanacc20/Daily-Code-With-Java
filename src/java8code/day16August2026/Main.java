@@ -85,6 +85,19 @@ public class Main {
 //        avgAge.forEach((department, averageAge)->
 //                System.out.println("Department: "+department+ " | average age: "+averageAge));
 
+//        Find highest-paid employee.
+//        Optional<Employee> highestPaidEmployee = employeeList.stream()
+//                .max(Comparator.comparing(Employee::salary));
+//
+//
+//        System.out.println(highestPaidEmployee.get().name());
+
+//        Employee highestPaid = employeeList.stream()
+//                .max(Comparator.comparingDouble(Employee::salary))
+//                .orElseThrow(()->new RuntimeException("no such employee found"));
+//
+//        System.out.println(highestPaid.name());
+
         //end timer
         long endTimer = System.nanoTime();
 
