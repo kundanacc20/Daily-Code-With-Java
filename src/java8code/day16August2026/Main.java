@@ -98,11 +98,23 @@ public class Main {
 //
 //        System.out.println(highestPaid.name());
 
-        Employee highestPaidEmp = employeeList.stream()
-                .reduce((emp1,emp2)->emp1.salary()>emp2.salary() ? emp1:emp2)
-                .orElseThrow(()->new RuntimeException("No employee found"));
+//        Employee highestPaidEmp = employeeList.stream()
+//                .reduce((emp1,emp2)->emp1.salary()>emp2.salary() ? emp1:emp2)
+//                .orElseThrow(()->new RuntimeException("No employee found"));
+//
+//        System.out.println(highestPaidEmp.name());
 
-        System.out.println(highestPaidEmp.name());
+//        Find lowest-paid employee.
+        Employee lowestPaidEmp = employeeList.stream()
+                .min(Comparator.comparing(Employee::salary))
+                .orElseThrow(()->new RuntimeException("no such employee found"));
+
+        System.out.println(lowestPaidEmp.name());
+
+        Employee lowestPaidEmployee = employeeList.stream()
+                .reduce((emp1, emp2) -> emp1.salary() < emp2.salary() ? emp1:emp2)
+                .orElseThrow(() -> new RuntimeException("no such employee found"));
+        System.out.println("lowest paid employee: "+lowestPaidEmployee.name()+" ji");
         //end timer
         long endTimer = System.nanoTime();
 
