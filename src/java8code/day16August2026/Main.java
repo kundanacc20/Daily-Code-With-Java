@@ -98,6 +98,11 @@ public class Main {
 //
 //        System.out.println(highestPaid.name());
 
+        Employee highestPaidEmp = employeeList.stream()
+                .reduce((emp1,emp2)->emp1.salary()>emp2.salary() ? emp1:emp2)
+                .orElseThrow(()->new RuntimeException("No employee found"));
+
+        System.out.println(highestPaidEmp.name());
         //end timer
         long endTimer = System.nanoTime();
 
