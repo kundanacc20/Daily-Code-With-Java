@@ -135,13 +135,19 @@ public class Main {
 //                .filter(e->e.joiningDate().isAfter(LocalDate.of(2020,1,1)))
 //                .toList();
 //
-        // i want only names of employee
-        List<String> namesOfEmpWhoJoinedAfter2020 = employeeList.stream()
-                .filter(emp -> emp.joiningDate().isAfter(LocalDate.of(2020,1,1)))
-                        .map(Employee::name)
-                                .toList();
-//        empJoinedAfter2020.forEach(System.out::println);
-        System.out.println(namesOfEmpWhoJoinedAfter2020);
+//        // i want only names of employee
+//        List<String> namesOfEmpWhoJoinedAfter2020 = employeeList.stream()
+//                .filter(emp -> emp.joiningDate().isAfter(LocalDate.of(2020,1,1)))
+//                        .map(Employee::name)
+//                                .toList();
+////        empJoinedAfter2020.forEach(System.out::println);
+//        System.out.println(namesOfEmpWhoJoinedAfter2020);
+
+//        Find the oldest employee.
+        Optional<Employee> oldestEmployee = employeeList.stream()
+                .min(Comparator.comparing(emp -> emp.joiningDate()));
+
+        System.out.println(oldestEmployee);
         //end timer
         long endTimer = System.nanoTime();
 
