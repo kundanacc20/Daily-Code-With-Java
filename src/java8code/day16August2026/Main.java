@@ -143,11 +143,20 @@ public class Main {
 ////        empJoinedAfter2020.forEach(System.out::println);
 //        System.out.println(namesOfEmpWhoJoinedAfter2020);
 
-//        Find the oldest employee.
-        Optional<Employee> oldestEmployee = employeeList.stream()
-                .min(Comparator.comparing(emp -> emp.joiningDate()));
+////        Find the oldest employee.
+//        Optional<Employee> oldestEmployee = employeeList.stream()
+//                .min(Comparator.comparing(emp -> emp.joiningDate()));
+//
+//        System.out.println(oldestEmployee);
 
-        System.out.println(oldestEmployee);
+        // find the youngest employee
+
+        Optional<Employee> youngestEmployee = employeeList.stream()
+                .max(Comparator.comparing(Employee::joiningDate));
+
+        System.out.println(youngestEmployee);
+
+
         //end timer
         long endTimer = System.nanoTime();
 
