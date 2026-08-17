@@ -149,13 +149,21 @@ public class Main {
 //
 //        System.out.println(oldestEmployee);
 
-        // find the youngest employee
+//        // find the youngest employee
+//
+//        Optional<Employee> youngestEmployee = employeeList.stream()
+//                .max(Comparator.comparing(Employee::joiningDate));
+//
+//        System.out.println(youngestEmployee);
 
-        Optional<Employee> youngestEmployee = employeeList.stream()
-                .max(Comparator.comparing(Employee::joiningDate));
+        // list of each employee joining date
 
-        System.out.println(youngestEmployee);
+        List<LocalDate> empJoiningDate = employeeList.stream()
+                .map(employee -> employee.joiningDate())
+                .sorted()
+                .collect(Collectors.toList());
 
+        System.out.println(empJoiningDate);
 
         //end timer
         long endTimer = System.nanoTime();
