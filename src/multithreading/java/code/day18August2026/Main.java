@@ -4,7 +4,11 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        SleepThread t = new SleepThread();
 
+        t.start();
+
+        t.interrupt();
         //end timer
         long endTimer = System.nanoTime();
 
