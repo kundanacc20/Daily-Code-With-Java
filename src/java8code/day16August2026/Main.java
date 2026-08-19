@@ -156,14 +156,20 @@ public class Main {
 //
 //        System.out.println(youngestEmployee);
 
-        // list of each employee joining date
+//        // list of each employee joining date
+//
+//        List<LocalDate> empJoiningDate = employeeList.stream()
+//                .map(employee -> employee.joiningDate())
+//                .sorted()
+//                .collect(Collectors.toList());
+//
+//        System.out.println(empJoiningDate);
 
-        List<LocalDate> empJoiningDate = employeeList.stream()
-                .map(employee -> employee.joiningDate())
-                .sorted()
+//        Sort employees by salary.
+        List<Employee> empBySalary = employeeList.stream()
+                .sorted(Comparator.comparing(Employee::salary))
                 .collect(Collectors.toList());
-
-        System.out.println(empJoiningDate);
+        System.out.println(empBySalary);
 
         //end timer
         long endTimer = System.nanoTime();
