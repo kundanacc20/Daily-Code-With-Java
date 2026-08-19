@@ -174,14 +174,23 @@ public class Main {
 //        empBySalary.forEach((emp) ->
 //                System.out.println("Name: "+ emp.name()+ " Salary : "+emp.salary()));
 
-//        Sort employees by age.
-        List<Employee> empByAge = employeeList.stream()
-                .sorted(Comparator.comparing(Employee::age))
-                .collect(Collectors.toList());
+////        Sort employees by age.
+//        List<Employee> empByAge = employeeList.stream()
+//                .sorted(Comparator.comparing(Employee::age))
+//                .collect(Collectors.toList());
+//
+//        empByAge.forEach(emp->
+//                System.out.println("Employee Name: "+emp.name()+" age: "+emp.age()));
 
-        empByAge.forEach(emp->
-                System.out.println("Employee Name: "+emp.name()+" age: "+emp.age()));
+//        Group employees by city.
+        Map<String,List<Employee>> groupEmpByCity = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::city));
 
+//        System.out.println(groupEmpByCity);
+        groupEmpByCity.forEach((city,employee) ->{
+            employee.forEach(emp ->
+                    System.out.println("name: "+emp.name()+" city: "+emp.city()));
+        });
         //end timer
         long endTimer = System.nanoTime();
 
