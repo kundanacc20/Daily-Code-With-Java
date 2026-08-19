@@ -11,7 +11,7 @@ public class Main {
         long startTimer = System.nanoTime();
         List<Employee> employeeList = Arrays.asList(
                 new Employee(100,"Narayan", 35,"Architecture","Male",70000, LocalDate.of(2020, 5, 10),"sambhaji nagar"),
-                new Employee(101, "Kundan", 30,"IT", "Male", 75000, LocalDate.of(2020, 6, 10), "Delhi"),
+                new Employee(101, "Kundan", 27,"IT", "Male", 75000, LocalDate.of(2020, 6, 10), "Delhi"),
                 new Employee(102, "Harshit", 28,"HR", "Male", 55000, LocalDate.of(2021, 3, 15), "Mumbai"),
                 new Employee(103, "Abhishek", 32,"Finance", "Male", 68000, LocalDate.of(2019, 9, 20), "Bangalore"),
                 new Employee(104, "Devendra", 29,"Marketing", "Male", 60000, LocalDate.of(2018, 12, 5), "Hyderabad"),
@@ -165,14 +165,22 @@ public class Main {
 //
 //        System.out.println(empJoiningDate);
 
-//        Sort employees by salary.
-        List<Employee> empBySalary = employeeList.stream()
-                .sorted(Comparator.comparing(Employee::salary))
-                .collect(Collectors.toList());
-//        System.out.println(empBySalary);
+////        Sort employees by salary.
+//        List<Employee> empBySalary = employeeList.stream()
+//                .sorted(Comparator.comparing(Employee::salary))
+//                .collect(Collectors.toList());
+////        System.out.println(empBySalary);
+//
+//        empBySalary.forEach((emp) ->
+//                System.out.println("Name: "+ emp.name()+ " Salary : "+emp.salary()));
 
-        empBySalary.forEach((emp) ->
-                System.out.println("Name: "+ emp.name()+ " Salary : "+emp.salary()));
+//        Sort employees by age.
+        List<Employee> empByAge = employeeList.stream()
+                .sorted(Comparator.comparing(Employee::age))
+                .collect(Collectors.toList());
+
+        empByAge.forEach(emp->
+                System.out.println("Employee Name: "+emp.name()+" age: "+emp.age()));
 
         //end timer
         long endTimer = System.nanoTime();
