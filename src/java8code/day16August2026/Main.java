@@ -192,18 +192,28 @@ public class Main {
 //                    System.out.println("name: "+emp.name()+" city: "+emp.city()));
 //        });
 
-//        Find the department with the highest average salary.
+////        Find the department with the highest average salary.
+//
+//        Map<String,Double> avgSalaryByDept = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::department,
+//                        Collectors.averagingDouble(Employee::salary)));
+//
+//        Map.Entry<String,Double> highestSalaryByDept =avgSalaryByDept.entrySet()
+//                .stream().max(Map.Entry.comparingByValue())
+//                .orElseThrow(()-> new RuntimeException("no dept found"));
+//
+//        System.out.println(highestSalaryByDept.getKey()+ " "+highestSalaryByDept.getValue());
 
-        Map<String,Double> avgSalaryByDept = employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::department,
-                        Collectors.averagingDouble(Employee::salary)));
+//        Find the top 3 highest-paid employees.
+        List<Employee> top3HighestPaidEmplyee = employeeList.stream()
+                .sorted(Comparator.comparing(Employee::salary).reversed())
+                .limit(3)
+                        .toList();
 
-        Map.Entry<String,Double> highestSalaryByDept =avgSalaryByDept.entrySet()
-                .stream().max(Map.Entry.comparingByValue())
-                .orElseThrow(()-> new RuntimeException("no dept found"));
+//        System.out.println(top3HighestPaidEmplyee);
 
-        System.out.println(highestSalaryByDept.getKey()+ " "+highestSalaryByDept.getValue());
-
+        top3HighestPaidEmplyee.forEach(emp ->
+                System.out.println("Name : "+emp.name()+ " Salary: "+ emp.salary()));
         //end timer
         long endTimer = System.nanoTime();
 
