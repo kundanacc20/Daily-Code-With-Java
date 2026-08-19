@@ -169,7 +169,10 @@ public class Main {
         List<Employee> empBySalary = employeeList.stream()
                 .sorted(Comparator.comparing(Employee::salary))
                 .collect(Collectors.toList());
-        System.out.println(empBySalary);
+//        System.out.println(empBySalary);
+
+        empBySalary.forEach((emp) ->
+                System.out.println("Name: "+ emp.name()+ " Salary : "+emp.salary()));
 
         //end timer
         long endTimer = System.nanoTime();
