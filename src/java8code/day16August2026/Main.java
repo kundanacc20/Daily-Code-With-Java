@@ -204,16 +204,24 @@ public class Main {
 //
 //        System.out.println(highestSalaryByDept.getKey()+ " "+highestSalaryByDept.getValue());
 
-//        Find the top 3 highest-paid employees.
-        List<Employee> top3HighestPaidEmplyee = employeeList.stream()
+////        Find the top 3 highest-paid employees.
+//        List<Employee> top3HighestPaidEmplyee = employeeList.stream()
+//                .sorted(Comparator.comparing(Employee::salary).reversed())
+//                .limit(3)
+//                        .toList();
+//
+////        System.out.println(top3HighestPaidEmplyee);
+//
+//        top3HighestPaidEmplyee.forEach(emp ->
+//                System.out.println("Name : "+emp.name()+ " Salary: "+ emp.salary()));
+
+//        Find the second-highest salary.
+        List<Employee> secondHighestSalary = employeeList.stream()
                 .sorted(Comparator.comparing(Employee::salary).reversed())
-                .limit(3)
-                        .toList();
-
-//        System.out.println(top3HighestPaidEmplyee);
-
-        top3HighestPaidEmplyee.forEach(emp ->
-                System.out.println("Name : "+emp.name()+ " Salary: "+ emp.salary()));
+                .skip(1)
+                .limit(1)
+                .toList();
+        System.out.println(secondHighestSalary);
         //end timer
         long endTimer = System.nanoTime();
 
