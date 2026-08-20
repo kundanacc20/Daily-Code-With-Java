@@ -261,16 +261,24 @@ public class Main {
 //                System.out.println("employee: "+emp.name()+
 //                        " | department: "+emp.department()+ " | salary: "+emp.salary()));
 
-//        Partition employees by salary (greater than a threshold).
+////        Partition employees by salary (greater than a threshold).
+//
+//        Map<Boolean,List<Employee>> employeeWithSalaryGreaterThan70000 = employeeList.stream()
+//                .collect(Collectors.partitioningBy(emp -> emp.salary() > 70000));
+//
+////        System.out.println(employeeWithSalaryGreaterThan70000);
+//        List<Employee> empPartitionAsSalary = employeeWithSalaryGreaterThan70000.get(true);
+//
+//        empPartitionAsSalary.forEach(emp ->
+//                System.out.println("employee name: "+emp.name()+ " | employee salary: "+emp.salary()));
 
-        Map<Boolean,List<Employee>> employeeWithSalaryGreaterThan70000 = employeeList.stream()
-                .collect(Collectors.partitioningBy(emp -> emp.salary() > 70000));
+//        Generate a department-wise salary report.
 
-//        System.out.println(employeeWithSalaryGreaterThan70000);
-        List<Employee> empPartitionAsSalary = employeeWithSalaryGreaterThan70000.get(true);
+        Map<String,Double> salaryDeptWise = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::department,
+                        Collectors.averagingLong(Employee::salary)));
 
-        empPartitionAsSalary.forEach(emp ->
-                System.out.println("employee name: "+emp.name()+ " | employee salary: "+emp.salary()));
+        System.out.println(salaryDeptWise);
         //end timer
         long endTimer = System.nanoTime();
 
