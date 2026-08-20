@@ -241,11 +241,36 @@ public class Main {
 
         //Find the employee with the longest name.
 
-        String longestName = employeeList.stream()
-                .map(Employee::name)
-                .max(Comparator.comparingInt(String::length))
-                .orElseThrow(()->new RuntimeException("no employee found"));
-        System.out.println(longestName);
+//        String longestName = employeeList.stream()
+//                .map(Employee::name)
+//                .max(Comparator.comparingInt(String::length))
+//                .orElseThrow(()->new RuntimeException("no employee found"));
+//        System.out.println(longestName);
+
+//        int longestEmpName = employeeList.stream()
+//                .mapToInt(e -> e.name().length())
+//                .max()
+//                .orElse(0);
+//
+//        List<Employee> empWithLongestName = employeeList.stream()
+//                .filter(e ->e.name().length() == longestEmpName)
+//                .collect(Collectors.toList());
+//
+////        System.out.println(empWithLongestName);
+//        empWithLongestName.forEach(emp ->
+//                System.out.println("employee: "+emp.name()+
+//                        " | department: "+emp.department()+ " | salary: "+emp.salary()));
+
+//        Partition employees by salary (greater than a threshold).
+
+        Map<Boolean,List<Employee>> employeeWithSalaryGreaterThan70000 = employeeList.stream()
+                .collect(Collectors.partitioningBy(emp -> emp.salary() > 70000));
+
+//        System.out.println(employeeWithSalaryGreaterThan70000);
+        List<Employee> empPartitionAsSalary = employeeWithSalaryGreaterThan70000.get(true);
+
+        empPartitionAsSalary.forEach(emp ->
+                System.out.println("employee name: "+emp.name()+ " | employee salary: "+emp.salary()));
         //end timer
         long endTimer = System.nanoTime();
 
