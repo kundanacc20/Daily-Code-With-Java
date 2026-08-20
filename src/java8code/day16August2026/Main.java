@@ -12,7 +12,7 @@ public class Main {
         List<Employee> employeeList = Arrays.asList(
                 new Employee(100,"Narayan", 35,"Architecture","Male",70000, LocalDate.of(2020, 5, 10),"sambhaji nagar"),
                 new Employee(101, "Kundan", 27,"IT", "Male", 75000, LocalDate.of(2020, 6, 10), "Delhi"),
-                new Employee(102, "Harshit", 28,"HR", "Male", 55000, LocalDate.of(2021, 3, 15), "Mumbai"),
+                new Employee(102, "Harshit kumar singh", 28,"HR", "Male", 55000, LocalDate.of(2021, 3, 15), "Mumbai"),
                 new Employee(103, "Abhishek", 32,"Finance", "Male", 68000, LocalDate.of(2019, 9, 20), "Bangalore"),
                 new Employee(104, "Devendra", 29,"Marketing", "Male", 60000, LocalDate.of(2018, 12, 5), "Hyderabad"),
                 new Employee(105, "Kunal", 31,"Sales", "Male", 72000, LocalDate.of(2022, 2, 25), "Pune"),
@@ -225,20 +225,27 @@ public class Main {
 //                .toList();
 //        System.out.println(secondHighestSalary);
 
-//        Find duplicate employee names.
+////        Find duplicate employee names.
+//
+//        Set<String> duplicateElement = employeeList.stream()
+//                .map(Employee::name)
+//                .collect(Collectors.groupingBy(
+//                        Function.identity(),
+//                        Collectors.counting()
+//                ))
+//                .entrySet().stream()
+//                .filter(entry ->entry.getValue()>1)
+//                .map(Map.Entry::getKey)
+//                .collect(Collectors.toSet());
+//        System.out.println(duplicateElement);
 
-        Set<String> duplicateElement = employeeList.stream()
+        //Find the employee with the longest name.
+
+        String longestName = employeeList.stream()
                 .map(Employee::name)
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ))
-                .entrySet().stream()
-                .filter(entry ->entry.getValue()>1)
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toSet());
-        System.out.println(duplicateElement);
-
+                .max(Comparator.comparingInt(String::length))
+                .orElseThrow(()->new RuntimeException("no employee found"));
+        System.out.println(longestName);
         //end timer
         long endTimer = System.nanoTime();
 
