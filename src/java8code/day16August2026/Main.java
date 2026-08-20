@@ -30,6 +30,8 @@ public class Main {
                 new Employee(117, "Amit", 32,"Sales", "Male", 76000, LocalDate.of(2022, 4, 29), "Pune"),
                 new Employee(118, "Ritika", 27,"Operations", "Female", 54000, LocalDate.of(2017, 7, 15), "Chennai"),
                 new Employee(119, "Manish", 33,"IT", "Male", 79000, LocalDate.of(2020, 9, 20), "Delhi"),
+                new Employee(119, "Manish", 34,"Account", "Male", 82000, LocalDate.of(2016, 7, 22), "Mumbai"),
+                new Employee(119, "Manish", 35,"Account", "Male", 90000, LocalDate.of(2019, 6, 21), "Bombay"),
                 new Employee(120, "Shreya", 25,"HR", "Female", 60000, LocalDate.of(2021, 6, 17), "Mumbai")
         );
 
@@ -215,13 +217,28 @@ public class Main {
 //        top3HighestPaidEmplyee.forEach(emp ->
 //                System.out.println("Name : "+emp.name()+ " Salary: "+ emp.salary()));
 
-//        Find the second-highest salary.
-        List<Employee> secondHighestSalary = employeeList.stream()
-                .sorted(Comparator.comparing(Employee::salary).reversed())
-                .skip(1)
-                .limit(1)
-                .toList();
-        System.out.println(secondHighestSalary);
+////        Find the second-highest salary.
+//        List<Employee> secondHighestSalary = employeeList.stream()
+//                .sorted(Comparator.comparing(Employee::salary).reversed())
+//                .skip(1)
+//                .limit(1)
+//                .toList();
+//        System.out.println(secondHighestSalary);
+
+//        Find duplicate employee names.
+
+        Set<String> duplicateElement = employeeList.stream()
+                .map(Employee::name)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ))
+                .entrySet().stream()
+                .filter(entry ->entry.getValue()>1)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
+        System.out.println(duplicateElement);
+
         //end timer
         long endTimer = System.nanoTime();
 
