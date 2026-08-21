@@ -36,17 +36,52 @@ Because the increment operation (counter++) is not atomic,
 updates can be lost.
  */
 
-        SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
+//        SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
+//
+//        Thread thread1 = new Thread(()->{
+//            for (int i =0; i<10000000; i++)
+//                synchronizedCounter.increment();
+//        });
+//
+//        Thread thread2 = new Thread(() ->{
+//            for (int i = 1; i <= 10000000; i++){
+//                synchronizedCounter.increment();
+//            }
+//        });
+//
+//        thread1.start();
+//        thread2.start();
+//
+//        thread1.join();
+//        thread2.join();
+//
+//        System.out.println(synchronizedCounter.count);
+
+/*
+Key Differences
+No synchronized keyword:
+AtomicInteger handles thread safety internally using CAS (Compare-And-Swap) operations.
+
+Method used:
+incrementAndGet() atomically increments the value and returns the updated result.
+
+Performance implications:
+
+Still O(n) time and O(1) space.
+
+But in practice, AtomicInteger avoids lock contention, making it faster under high concurrency.
+ */
+        AtomicIntegerCounter atomicIntegerCounter = new AtomicIntegerCounter();
 
         Thread thread1 = new Thread(()->{
-            for (int i =0; i<10000000; i++)
-                synchronizedCounter.increment();
+            for (int i =1; i<=10000000; i++){
+                atomicIntegerCounter.increment();
+            }
         });
 
-        Thread thread2 = new Thread(() ->{
-            for (int i = 1; i <= 10000000; i++){
-                synchronizedCounter.increment();
-            }
+        Thread thread2 = new Thread(()->{
+            for(int i = 1; i<=10000000; i++)
+                atomicIntegerCounter.increment();
         });
 
         thread1.start();
@@ -55,7 +90,7 @@ updates can be lost.
         thread1.join();
         thread2.join();
 
-        System.out.println(synchronizedCounter.count);
+        System.out.println(atomicIntegerCounter.count);
         //end timer
         long endTimer = System.nanoTime();
 
