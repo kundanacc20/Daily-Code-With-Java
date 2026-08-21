@@ -272,13 +272,15 @@ public class Main {
 //        empPartitionAsSalary.forEach(emp ->
 //                System.out.println("employee name: "+emp.name()+ " | employee salary: "+emp.salary()));
 
-//        Generate a department-wise salary report.
+////        Generate a department-wise salary report.
+//
+//        Map<String,Double> salaryDeptWise = employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::department,
+//                        Collectors.averagingLong(Employee::salary)));
+//
+//        System.out.println(salaryDeptWise);
 
-        Map<String,Double> salaryDeptWise = employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::department,
-                        Collectors.averagingLong(Employee::salary)));
 
-        System.out.println(salaryDeptWise);
         //end timer
         long endTimer = System.nanoTime();
 
