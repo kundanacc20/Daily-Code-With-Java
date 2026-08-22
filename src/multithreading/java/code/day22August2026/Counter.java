@@ -13,3 +13,13 @@ public class Counter {
         return count;
     }
 }
+
+
+/*
+Synchronized Block
+
+Problem:
+
+Instead of synchronizing
+the entire method, synchronize only the critical section.
+ */
