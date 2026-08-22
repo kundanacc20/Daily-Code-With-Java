@@ -47,13 +47,26 @@ public class Main {
 //        thread2.join();
 //        System.out.println(counter.getCount());
 
-        Thread t1 = new Thread(() ->{
-            Printer.print("Thread:1");
-        });
+//        Thread t1 = new Thread(() ->{
+//            Printer.print("Thread:1");
+//        });
+//
+//        Thread t2 = new Thread(()->{
+//            Printer.print("Thread:2");
+//        });
+//        t1.start();
+//        t2.start();
+//
+//        t1.join();
+//        t2.join();
 
-        Thread t2 = new Thread(()->{
-            Printer.print("Thread:2");
-        });
+        Printer printer1 = new Printer();
+        Printer printer2 = new Printer();
+
+        Thread t1 = new Thread(printer1::print,"Thread-1");
+        Thread t2 = new Thread(printer2::print,"Thread-2");
+
+
         t1.start();
         t2.start();
 
