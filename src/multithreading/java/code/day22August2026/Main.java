@@ -4,27 +4,48 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
         //start timer
         long startTimer = System.nanoTime();
-        BankAccount account = new BankAccount();
+//        BankAccount account = new BankAccount();
+//
+//        Thread t1 = new Thread(()->{
+//            for(int i =1; i<= 100000; i++){
+//                account.deposit(100);
+//            }
+//        });
+//
+//        Thread t2 = new Thread(() ->{
+//            for (int i = 1; i <= 100000; i++){
+//                account.deposit(100);
+//            }
+//        });
+//
+//        t1.start();
+//        t2.start();
+//
+//        t1.join();
+//        t2.join();
+//
+//        System.out.println("Balance: "+account.getBalance());
 
-        Thread t1 = new Thread(()->{
-            for(int i =1; i<= 1000; i++){
-                account.deposit(100);
+        Counter counter = new Counter();
+
+        Thread thread1 = new Thread(()-> {
+            for (int i = 1; i <= 100000; i++){
+                counter.increment();
             }
         });
 
-        Thread t2 = new Thread(() ->{
-            for (int i = 1; i <= 1000; i++){
-                account.deposit(100);
+        Thread thread2 = new Thread(()->{
+            for(int i = 1; i<=100000; i++){
+                counter.increment();
             }
         });
 
-        t1.start();
-        t2.start();
+        thread1.start();
+        thread2.start();
 
-        t1.join();
-        t2.join();
-
-        System.out.println("Balance: "+account.getBalance());
+        thread1.join();
+        thread2.join();
+        System.out.println(counter.getCount());
         //end timer
         long endTimer = System.nanoTime();
 
