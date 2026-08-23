@@ -5,7 +5,7 @@ public class TicketBooking {
 
     synchronized void bookTicket(String user, int tickets){
         if(availableTickets >= tickets){
-            System.out.println(user+ " is booking "+tickets+ "ticket(s)");
+            System.out.println(user+ " is booking "+tickets+ " ticket(s)");
 
             availableTickets -= tickets;
             System.out.println(

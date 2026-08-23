@@ -16,23 +16,44 @@ public class Main {
 //        t1.join();
 //        t2.join();
 
-        Counter counter = new Counter();
+//        Counter counter = new Counter();
+//
+//        Thread[] threads = new Thread[10];
+//
+//        for (int i = 0; i< 10; i++){
+//            threads[i] = new Thread(() ->{
+//                for (int j = 0; j < 10000; j++){
+//                    counter.increment();
+//                }
+//            });
+//            threads[i].start();
+//        }
+//
+//        for(Thread thread: threads){
+//            thread.join();
+//        }
+//        System.out.println("final count : "+counter.getCount());
 
-        Thread[] threads = new Thread[10];
 
-        for (int i = 0; i< 10; i++){
-            threads[i] = new Thread(() ->{
-                for (int j = 0; j < 10000; j++){
-                    counter.increment();
-                }
-            });
-            threads[i].start();
-        }
+        TicketBooking booking = new TicketBooking();
 
-        for(Thread thread: threads){
-            thread.join();
-        }
-        System.out.println("final count : "+counter.getCount());
+        Thread t1 = new Thread(()->
+                booking.bookTicket("user-1",3));
+
+        Thread t2 = new Thread(()->
+                booking.bookTicket("user-2",5));
+
+        Thread t3 = new Thread(() ->
+                booking.bookTicket("user-3",1));
+
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        t1.join();
+        t2.join();
+        t3.join();
 
         //end timer
         long endTimer = System.nanoTime();
