@@ -7,7 +7,7 @@ public class TablePrinter {
             System.out.println(num+" x "+i+" = "+num*i);
         }
         try {
-            Thread.sleep(100);
+            Thread.sleep(200);
         } catch (InterruptedException e){
             Thread.currentThread().interrupt();
         }

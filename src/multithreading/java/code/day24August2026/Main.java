@@ -23,19 +23,42 @@ public class Main {
 //        System.out.println("Account 1: "+account1.getBalance());
 //        System.out.println("Account 2: "+account2.getBalance());
 
-        TablePrinter printer = new TablePrinter();
+//        TablePrinter printer = new TablePrinter();
+//
+//        Thread thread1 = new Thread(() ->
+//                printer.printTable(5));
+//
+//        Thread thread2 = new Thread(()->
+//                printer.printTable(6));
+//
+//        thread1.start();
+//        thread2.start();
+//
+//        thread1.join();
+//        thread2.join();
 
-        Thread thread1 = new Thread(() ->
-                printer.printTable(5));
+        Printer printer = new Printer();
 
+        Thread thread1 = new Thread(()->
+                printer.printDocument("kundan","java notes"
+                ));
         Thread thread2 = new Thread(()->
-                printer.printTable(6));
+                printer.printDocument(
+                        "kumar","multithreading notes"
+                ));
+
+        Thread thread3 = new Thread(() ->
+                printer.printDocument(
+                        "harry","time travel notes"
+                ));
 
         thread1.start();
         thread2.start();
+        thread3.start();
 
         thread1.join();
         thread2.join();
+        thread3.join();
 
         //end timer
         long endTimer = System.nanoTime();
