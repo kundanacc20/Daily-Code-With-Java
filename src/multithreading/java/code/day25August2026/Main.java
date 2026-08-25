@@ -41,26 +41,40 @@ public class Main {
 //        }
 //        System.out.println(DuplicateElementSet);
 
-        // drama for above code
+//        // drama for above code: battle of Numbers
+//
+//        List<Integer> numberSena = Arrays.asList(10,1,1,2,3,5,11,19,20,30,40,2,11);
+//
+//        Set<Integer> uniqueNumberWarrior = new HashSet<>();
+//        Set<Integer> duplicateNumberWarrior = new HashSet<>();
+//
+//        System.out.println("Battle of the Numbers begin: ");
+//
+//        for(Integer e : numberSena){
+//            if (!uniqueNumberWarrior.add(e)){
+//                System.out.println("duplicate warrior joining duplicate Number Sena");
+//                duplicateNumberWarrior.add(e);
+//            } else {
+//                System.out.println("unique number warrior is joining the unique Number Sena");
+//            }
+//        }
+//        System.out.println("battle of numbers ended: ");
+//        System.out.println("duplicate number warrior: "+duplicateNumberWarrior);
+//        System.out.println("unique number sena : "+uniqueNumberWarrior);
 
-        List<Integer> numberSena = Arrays.asList(10,1,1,2,3,5,11,19,20,30,40,2,11);
 
-        Set<Integer> uniqueNumberWarrior = new HashSet<>();
-        Set<Integer> duplicateNumberWarrior = new HashSet<>();
+/*Problem 2: Remove duplicates while preserving order
+Input:
+[10, 20, 10, 30, 20, 40]
 
-        System.out.println("Battle of the Numbers begin: ");
+Output:
+[10, 20, 30, 40]
+ */
+        List<Integer> numberList = Arrays.asList(10,20,10,30,20,40,50,60);
 
-        for(Integer e : numberSena){
-            if (!uniqueNumberWarrior.add(e)){
-                System.out.println("duplicate warrior joining duplicate Number Sena");
-                duplicateNumberWarrior.add(e);
-            } else {
-                System.out.println("unique number warrior is joining the unique Number Sena");
-            }
-        }
-        System.out.println("battle of numbers ended: ");
-        System.out.println("duplicate number warrior: "+duplicateNumberWarrior);
-        System.out.println("unique number sena : "+uniqueNumberWarrior);
+        Set<Integer> unique = new LinkedHashSet<>(numberList);
+
+        System.out.println(unique);
 
         //end timer
         long endTimer = System.nanoTime();
