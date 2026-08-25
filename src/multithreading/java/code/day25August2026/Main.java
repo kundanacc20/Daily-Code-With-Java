@@ -27,19 +27,40 @@ public class Main {
 //        System.out.println(duplicateElement);
 
 
-//        Concepts: ArrayList, HashSet
+////        Concepts: ArrayList, HashSet
+//
+//        List<Integer> arrayList = Arrays.asList(10,20,30,20,40,10,50,30);
+//
+//        Set<Integer> nonDuplicateElementSet = new HashSet<>();
+//        Set<Integer> DuplicateElementSet = new HashSet<>();
+//
+//        for(Integer element : arrayList){
+//            if(!nonDuplicateElementSet.add(element)){
+//                DuplicateElementSet.add(element);
+//            }
+//        }
+//        System.out.println(DuplicateElementSet);
 
-        List<Integer> arrayList = Arrays.asList(10,20,30,20,40,10,50,30);
+        // drama for above code
 
-        Set<Integer> nonDuplicateElementSet = new HashSet<>();
-        Set<Integer> DuplicateElementSet = new HashSet<>();
+        List<Integer> numberSena = Arrays.asList(10,1,1,2,3,5,11,19,20,30,40,2,11);
 
-        for(Integer element : arrayList){
-            if(!nonDuplicateElementSet.add(element)){
-                DuplicateElementSet.add(element);
+        Set<Integer> uniqueNumberWarrior = new HashSet<>();
+        Set<Integer> duplicateNumberWarrior = new HashSet<>();
+
+        System.out.println("Battle of the Numbers begin: ");
+
+        for(Integer e : numberSena){
+            if (!uniqueNumberWarrior.add(e)){
+                System.out.println("duplicate warrior joining duplicate Number Sena");
+                duplicateNumberWarrior.add(e);
+            } else {
+                System.out.println("unique number warrior is joining the unique Number Sena");
             }
         }
-        System.out.println(DuplicateElementSet);
+        System.out.println("battle of numbers ended: ");
+        System.out.println("duplicate number warrior: "+duplicateNumberWarrior);
+        System.out.println("unique number sena : "+uniqueNumberWarrior);
 
         //end timer
         long endTimer = System.nanoTime();
