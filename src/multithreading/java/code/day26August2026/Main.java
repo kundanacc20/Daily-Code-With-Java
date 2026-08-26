@@ -1,9 +1,6 @@
 package multithreading.java.code.day26August2026;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -56,7 +53,14 @@ Output:
 //                .collect(Collectors.toList());
 //        System.out.println(uniqueElemnt);
 
-
+////Concept: HashMap
+//
+//        Map<Integer,Integer> frequencyOfEachNumber = new HashMap<>();
+//
+//        for (Integer number: numberList){
+//            frequencyOfEachNumber.put(number,frequencyOfEachNumber.getOrDefault(number,0)+1);
+//        }
+//        System.out.println(frequencyOfEachNumber);
 
         long endTimer = System.nanoTime();
 
