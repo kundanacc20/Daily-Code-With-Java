@@ -17,22 +17,37 @@ Input:
 Output:
 w
 */
-        String inputString = "swiss";
+//        String inputString = "swiss";
+//
+//        Optional<Character> firstNonRepeatedChar = inputString.chars()
+//                .mapToObj(e -> (char)e)
+//                .collect(Collectors.groupingBy(
+//                        Function.identity(),
+//                        LinkedHashMap::new,
+//                        Collectors.counting()
+//                ))
+//                .entrySet()
+//                .stream()
+//                .filter(e -> e.getValue()==1)
+//                .map(Map.Entry::getKey)
+//                .findFirst();
+//
+//        System.out.println(firstNonRepeatedChar.orElse(null));
 
-        Optional<Character> firstNonRepeatedChar = inputString.chars()
-                .mapToObj(e -> (char)e)
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        LinkedHashMap::new,
-                        Collectors.counting()
-                ))
-                .entrySet()
-                .stream()
-                .filter(e -> e.getValue()==1)
-                .map(Map.Entry::getKey)
-                .findFirst();
+        String word = "watch";
 
-        System.out.println(firstNonRepeatedChar.orElse(null));
+        Map<Character,Integer> map = new LinkedHashMap<>();
+
+        for(char ch: word.toCharArray()){
+            map.put(ch,map.getOrDefault(ch,0)+1);
+        }
+
+        for(Map.Entry<Character,Integer> entry : map.entrySet()){
+            if(entry.getValue()==1){
+                System.out.println(entry.getKey());
+                break;
+            }
+        }
         //end timer
         long endTimer = System.nanoTime();
 
