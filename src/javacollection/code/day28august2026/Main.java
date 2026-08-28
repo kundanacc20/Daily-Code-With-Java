@@ -1,9 +1,6 @@
 package javacollection.code.day28august2026;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
@@ -18,18 +15,29 @@ public class Main {
         [30, 40]
         Concept: HashSet
          */
-        List<Integer> list1 = Arrays.asList(10,20,30,40);
-        List<Integer> list2 = Arrays.asList(30,40,50,60);
+        List<Integer> list1 = Arrays.asList(1,10,20,30,40);
+        List<Integer> list2 = Arrays.asList(1,30,40,50,60);
 
-        Set<Integer> commonElement = new HashSet<>();
+//        Set<Integer> commonElement = new HashSet<>();
+//
+//        for(Integer e : list2)
+//        {
+//            if(list1.contains(e)){
+//                commonElement.add(e);
+//            }
+//        }
+//        System.out.println(commonElement);
 
-        for(Integer e : list2)
-        {
-            if(list1.contains(e)){
-                commonElement.add(e);
+        Set<Integer> set2 = new HashSet<>(list1);
+
+        List<Integer> common = new ArrayList<>();
+
+        for (Integer e : list2){
+            if(set2.contains(e)){
+                common.add(e);
             }
         }
-        System.out.println(commonElement);
+        System.out.println(common);
         //end timer
         long endTimer = System.nanoTime();
 
