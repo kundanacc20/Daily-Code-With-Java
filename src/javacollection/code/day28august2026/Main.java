@@ -57,6 +57,16 @@ Concept: Set
         }
         System.out.println(unionOfList);
          */
+
+        /*List<Integer> list1 = Arrays.asList(1,2,3,4,5);
+        List<Integer> list2 = Arrays.asList(1,6,7,8,9);
+
+        Set<Integer> unionSet = new HashSet<>(list1);
+        unionSet.addAll(list2);
+
+        List<Integer> unionList = new ArrayList<>(unionSet);
+        System.out.println(unionList);
+         */
         //end timer
         long endTimer = System.nanoTime();
 
