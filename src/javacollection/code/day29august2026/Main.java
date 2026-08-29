@@ -1,7 +1,9 @@
 package javacollection.code.day29august2026;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args){
@@ -32,7 +34,14 @@ public class Main {
 
        // System.out.println(employees);
 
+/*
+Problem : Sort employees by salary
+ */
+        List<Employee> emplyeeBySalary = employees.stream()
+                .sorted(Comparator.comparingDouble(Employee::salary))
+                .collect(Collectors.toList());
 
+        System.out.println(emplyeeBySalary);
         //end timer
         long endTimer = System.nanoTime();
 
