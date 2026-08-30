@@ -6,7 +6,7 @@ public class Main {
         long startTimer = System.nanoTime();
         Day today = Day.MONDAY;
 
-        if(today == Day.SATURDAY || today == Day.SUNDAY){
+        /*if(today == Day.SATURDAY || today == Day.SUNDAY){
             System.out.println("today is weekend");
         } else {
             System.out.println("today is weekdays");
@@ -17,6 +17,16 @@ public class Main {
         for(Day d: Day.values()){
             System.out.println(d);
         }
+
+         */
+
+        String message = switch (today){
+            case MONDAY -> "start of the week";
+            case FRIDAY -> "almost weekend arrived";
+            default -> "Midweek";
+        };
+
+        System.out.println(message);
         //end timer
         long endTimer = System.nanoTime();
 
