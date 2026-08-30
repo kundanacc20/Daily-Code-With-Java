@@ -4,7 +4,19 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Day today = Day.MONDAY;
 
+        if(today == Day.SATURDAY || today == Day.SUNDAY){
+            System.out.println("today is weekend");
+        } else {
+            System.out.println("today is weekdays");
+        }
+
+        //iterating over enum
+
+        for(Day d: Day.values()){
+            System.out.println(d);
+        }
         //end timer
         long endTimer = System.nanoTime();
 
