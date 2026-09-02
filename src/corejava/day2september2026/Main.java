@@ -4,7 +4,9 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-
+        for (Day day : Day.values()){
+            System.out.println(day);
+        }
         //end timer
         long endTimer = System.nanoTime();
 
