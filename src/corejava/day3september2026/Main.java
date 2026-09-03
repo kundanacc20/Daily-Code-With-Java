@@ -5,6 +5,10 @@ public class Main {
         //start timer
         long startTimer = System.nanoTime();
 
+        Status status = Status.PROCESSING;
+
+        System.out.println(status);
+        System.out.println(status.getCode());
         //end timer
         long endTimer = System.nanoTime();
 
