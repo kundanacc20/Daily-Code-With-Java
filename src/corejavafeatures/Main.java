@@ -4,7 +4,9 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Square s = (int x) ->x*x;
 
+        System.out.println(s.calculateArea(5));
         //end timer
         long endTimer = System.nanoTime();
 
