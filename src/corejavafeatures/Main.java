@@ -4,9 +4,13 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        Square s = (int x) ->x*x;
+//        Square s = (int x) ->x*x;
+//
+//        System.out.println(s.calculateArea(5));
 
-        System.out.println(s.calculateArea(5));
+        //abstract class and abstract method
+        Shape s = new Triangle();
+        s.draw();
         //end timer
         long endTimer = System.nanoTime();
 
