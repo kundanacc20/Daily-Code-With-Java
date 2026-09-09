@@ -1,10 +1,9 @@
 package corejava.day9september2026;
 
-import com.kundan.day11july2026.Function;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args){
@@ -28,6 +27,15 @@ public class Main {
 //        Function<String,Integer> func = String::length;
 //
 //        System.out.println(func.apply("kundan"));
+
+        Function<String,Integer> func = String::length;
+        List<String> nameList = Arrays.asList("kundan","kumar","aditya","rajak");
+
+        List<Integer> nameLengthList = nameList.stream()
+                .map(func)
+                .collect(Collectors.toList());
+
+        System.out.println(nameLengthList);
         //end timer
         long endTimer = System.nanoTime();
 
