@@ -8,16 +8,20 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        List<Integer> numList = Arrays.asList(1,2,3,4,5);
+        //List<Integer> numList = Arrays.asList(1,2,3,4,5);
 //        //by using lambda
 //        numList.forEach(n->System.out.print(Math.sqrt(n)+" "));
 
-        //by using method reference
-        List<Double> rooList = numList.stream()
-                .map(Math::sqrt)
-                .collect(Collectors.toList());
+//        //by using method reference
+//        List<Double> rooList = numList.stream()
+//                .map(Math::sqrt)
+//                .collect(Collectors.toList());
+//
+//        System.out.println(rooList);
 
-        System.out.println(rooList);
+        List<String> names = Arrays.asList("kundan","kumar");
+
+        names.forEach(System.out::println);
         //end timer
         long endTimer = System.nanoTime();
 
