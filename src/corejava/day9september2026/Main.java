@@ -1,5 +1,7 @@
 package corejava.day9september2026;
 
+import com.kundan.day11july2026.Function;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,9 +21,13 @@ public class Main {
 //
 //        System.out.println(rooList);
 
-        List<String> names = Arrays.asList("kundan","kumar");
+//        List<String> names = Arrays.asList("kundan","kumar");
+//
+//        names.forEach(System.out::println);
 
-        names.forEach(System.out::println);
+//        Function<String,Integer> func = String::length;
+//
+//        System.out.println(func.apply("kundan"));
         //end timer
         long endTimer = System.nanoTime();
 
