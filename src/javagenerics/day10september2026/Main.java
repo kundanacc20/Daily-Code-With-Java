@@ -4,7 +4,19 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+//        //first we will use Box class for string data type
+//        Box<String> stringBox = new Box<>();
+//
+//        stringBox.setValue("kundan");
+//        System.out.println(stringBox.getValue());
+//        System.out.println(stringBox);
 
+        // now we will test for Integer
+
+        Box<Integer> integerBox = new Box<>();
+        integerBox.setValue(2);
+
+        System.out.println(integerBox);
         //end timer
         long endTimer = System.nanoTime();
 
