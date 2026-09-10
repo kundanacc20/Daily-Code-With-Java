@@ -16,6 +16,9 @@ public class Main {
         Box<Integer> integerBox = new Box<>();
         integerBox.setValue(2);
 
+        integerBox.setValue(3);
+        System.out.println(integerBox.getValue());
+
         System.out.println(integerBox);
         //end timer
         long endTimer = System.nanoTime();

@@ -11,8 +11,8 @@ public class Box<T> {
         return value;
     }
 
-    @Override
-    public String toString(){
-        return value.toString();
-    }
+//    @Override
+//    public String toString(){
+//        return value.toString();
+//    }
 }
