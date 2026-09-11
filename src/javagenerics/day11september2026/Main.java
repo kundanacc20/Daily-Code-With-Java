@@ -4,7 +4,14 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Printer intPrinter = new ArrayPrinter();
+        Printer strPrinter = new ArrayPrinter();
 
+        Integer[] intArray = {1,2,3,4};
+        String[] strArray = {"abc","def","ghi"};
+
+        intPrinter.print(intArray);
+        strPrinter.print(strArray);
         //end timer
         long endTimer = System.nanoTime();
 
