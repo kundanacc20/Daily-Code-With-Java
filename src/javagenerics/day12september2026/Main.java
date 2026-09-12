@@ -1,5 +1,7 @@
 package javagenerics.day12september2026;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args){
         //start timer
@@ -15,6 +17,10 @@ public class Main {
 //        System.out.println(MaxFinder.findMax(11,16));
 
 //        System.out.println(MaxFinder.findMax("Kundan","kumar"));
+
+        //generic sum
+        System.out.println(SumCalculator.sum(List.of(1,2,3,4,5,6)));
+        System.out.println(SumCalculator.sum(List.of(1,2,3,4)));
         //end timer
         long endTimer = System.nanoTime();
 
