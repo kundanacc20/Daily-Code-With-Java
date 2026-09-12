@@ -10,6 +10,11 @@ public class Main {
 //        // string , string
 //        Pair<String,String> stringStringPair = new Pair<>("kundan","kumar");
 //        System.out.println(stringStringPair);
+
+//        //find max between two generic data types
+//        System.out.println(MaxFinder.findMax(11,16));
+
+//        System.out.println(MaxFinder.findMax("Kundan","kumar"));
         //end timer
         long endTimer = System.nanoTime();
 
