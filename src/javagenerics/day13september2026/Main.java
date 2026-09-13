@@ -1,5 +1,7 @@
 package javagenerics.day13september2026;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args){
         //start timer
@@ -15,7 +17,7 @@ public class Main {
 
          */
 
-        GenericStack<String> stringGenericStack = new GenericStack<>();
+        /*GenericStack<String> stringGenericStack = new GenericStack<>();
         stringGenericStack.push("kundan");
         stringGenericStack.push("kumar");
         stringGenericStack.push("harshit");
@@ -26,6 +28,10 @@ public class Main {
         stringGenericStack.printElements();
         System.out.println(stringGenericStack.peek());
         stringGenericStack.printElements();
+
+         */
+        ListPrinter.printList(List.of(1,2,3,4));
+        ListPrinter.printList(List.of("k","u","n","d","a","n"));
         //end timer
         long endTimer = System.nanoTime();
 
