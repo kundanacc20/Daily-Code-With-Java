@@ -24,4 +24,12 @@ public class GenericStack<T> {
     public boolean isEmpty(){
         return elements.isEmpty();
     }
+
+    public void printElements(){
+        if(isEmpty()){
+            System.out.println("List is Empty: ");
+        } else {
+            System.out.println(elements);
+        }
+    }
 }
