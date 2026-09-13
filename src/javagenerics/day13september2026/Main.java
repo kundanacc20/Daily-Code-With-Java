@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        GenericStack<Integer> stack = new GenericStack<>();
+        /* GenericStack<Integer> stack = new GenericStack<>();
 
         stack.push(1);
         stack.push(2);
@@ -12,6 +12,20 @@ public class Main {
         stack.push(8);
 
         stack.printElements();
+
+         */
+
+        GenericStack<String> stringGenericStack = new GenericStack<>();
+        stringGenericStack.push("kundan");
+        stringGenericStack.push("kumar");
+        stringGenericStack.push("harshit");
+        stringGenericStack.push("kumar singh");
+
+        stringGenericStack.printElements();
+        System.out.println(stringGenericStack.pop());
+        stringGenericStack.printElements();
+        System.out.println(stringGenericStack.peek());
+        stringGenericStack.printElements();
         //end timer
         long endTimer = System.nanoTime();
 
