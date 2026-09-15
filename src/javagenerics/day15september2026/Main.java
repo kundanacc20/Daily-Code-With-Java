@@ -14,10 +14,16 @@ public class Main {
 //        CopyUtil.copy(src,dest);
 //        ResultPrinter.print(dest);
 
-        List<Double> src = Arrays.asList(1.1,1.2,1.4);
+        /*List<Double> src = Arrays.asList(1.1,1.2,1.4);
         List<Number> dest = new ArrayList<>();
 
         CopyUtil.copy(src, dest);
+        ResultPrinter.print(dest);
+         */
+        List<String> src = Arrays.asList("apple","orange","banana","kiwi","grapes");
+        List<Object> dest = new ArrayList<>();
+
+        CopyUtil.copy(src,dest);
         ResultPrinter.print(dest);
         //end timer
         long endTimer = System.nanoTime();
@@ -28,3 +34,8 @@ public class Main {
         System.out.println("program time : "+programTime+" ms");
     }
 }
+/*
+Write a generic copy method that copies elements from a source
+list into a destination list, where the destination can hold
+the source type or any supertype.
+ */
