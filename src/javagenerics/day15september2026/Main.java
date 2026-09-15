@@ -8,10 +8,16 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        List<Integer> src = Arrays.asList(1,2,3,4);
+//        List<Integer> src = Arrays.asList(1,2,3,4);
+//        List<Number> dest = new ArrayList<>();
+//
+//        CopyUtil.copy(src,dest);
+//        ResultPrinter.print(dest);
+
+        List<Double> src = Arrays.asList(1.1,1.2,1.4);
         List<Number> dest = new ArrayList<>();
 
-        CopyUtil.copy(src,dest);
+        CopyUtil.copy(src, dest);
         ResultPrinter.print(dest);
         //end timer
         long endTimer = System.nanoTime();
