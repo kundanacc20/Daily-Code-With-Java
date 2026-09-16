@@ -4,6 +4,10 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        System.out.println(PermissionChecker.hasPermission(Role.ADMIN,Permission.DELETE));
+        System.out.println(PermissionChecker.hasPermission(Role.USER,Permission.DELETE));
+        System.out.println(PermissionChecker.hasPermission(Role.GUEST,Permission.READ));
+
 
         //end timer
         long endTimer = System.nanoTime();
