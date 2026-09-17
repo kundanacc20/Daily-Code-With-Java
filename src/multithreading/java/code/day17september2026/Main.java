@@ -4,7 +4,22 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        MyBlockingQueue<Integer> queue = new MyBlockingQueue<>(3);
 
+        Thread producer = new Thread(() ->{
+            for (int i =1; i< 10; i++){
+                queue.put(i);
+            }
+        });
+
+        Thread consumer = new Thread(()->{
+            for (int i = 1; i<=10; i++){
+                queue.take();
+            }
+        });
+
+        producer.start();
+        consumer.start();
         //end timer
         long endTimer = System.nanoTime();
 
