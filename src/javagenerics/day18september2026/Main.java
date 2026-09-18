@@ -4,7 +4,15 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        ZeroEvenOdd object = new ZeroEvenOdd(5);
 
+        Thread zero = new Thread(object::zero);
+        Thread even = new Thread(object::even);
+        Thread odd = new Thread(object::odd);
+
+        zero.start();
+        odd.start();
+        even.start();
         //end timer
         long endTimer = System.nanoTime();
 
