@@ -4,7 +4,15 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        NumberSequence sequence = new NumberSequence();
 
+        Thread t1 = new Thread(()->sequence.print(1),"thread-1");
+        Thread t2 = new Thread(() ->sequence.print(2), "thread-2");
+        Thread t3 = new Thread(() -> sequence.print(0),"thread-3");
+
+        t1.start();
+        t2.start();
+        t3.start();
         //end timer
         long endTimer = System.nanoTime();
 
