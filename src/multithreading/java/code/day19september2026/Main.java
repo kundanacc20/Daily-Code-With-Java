@@ -14,3 +14,22 @@ public class Main {
         System.out.println("program time : "+programTimer+ " ms");
     }
 }
+/*
+Problem  — Print 1 to N Using Three Threads
+
+Difficulty: Intermediate+
+
+Problem
+
+Three threads should print numbers in sequence:
+
+Thread-1 → 1
+Thread-2 → 2
+Thread-3 → 3
+Thread-1 → 4
+...
+
+For N = 9:
+
+1 2 3 4 5 6 7 8 9
+ */
