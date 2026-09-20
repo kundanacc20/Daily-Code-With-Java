@@ -8,7 +8,7 @@ public class ABCPrinter {
             while (state != 0){
                 waitForTurn();
             }
-            System.out.println("A");
+            System.out.print(" A ");
 
             state = 1;
             notifyAll();
@@ -20,7 +20,7 @@ public class ABCPrinter {
             while (state != 1){
                 waitForTurn();
             }
-            System.out.println("B");
+            System.out.print(" B ");
             state = 2;
             notifyAll();
         }
@@ -31,7 +31,7 @@ public class ABCPrinter {
             while (state != 2){
                 waitForTurn();
             }
-            System.out.println("C");
+            System.out.print(" C ");
             state = 0;
             notifyAll();
         }
@@ -44,4 +44,5 @@ public class ABCPrinter {
             Thread.currentThread().interrupt();
         }
     }
+
 }
