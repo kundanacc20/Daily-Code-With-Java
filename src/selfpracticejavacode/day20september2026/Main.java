@@ -1,12 +1,14 @@
 package selfpracticejavacode.day20september2026;
 
+import static selfpracticejavacode.day20september2026.SlidingWindowUtil.slidingWindow;
+
 public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        int[] myArray = {1,2,3,4,5,1,6,7,8,9,10};
+        int[] myArray = {1,2,3,4,5,1,6,7,8,7,10,15};
 
-        int k = 4;
+        int k = 3;
 
         System.out.println(slidingWindow(myArray,k));
         //end timer
@@ -16,24 +18,5 @@ public class Main {
         long programTime = (endTimer - startTimer)/1_000_000;
 
         System.out.println("Program Time: "+programTime+" ms");
-    }
-
-    public static int slidingWindow(int[] myArray, int k) {
-        int left = 0;
-        int windowSum = 0;
-        int maxSum = Integer.MIN_VALUE;
-
-        for(int right = 0; right < myArray.length; right++){
-            windowSum += myArray[right];
-
-            if(right - left + 1 == k){
-                maxSum = Math.max(maxSum,windowSum);
-
-                windowSum -= myArray[left];
-                left++;
-            }
-        }
-
-        return maxSum;
     }
 }
