@@ -1,0 +1,35 @@
+package javagenerics.day13september2026;
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+import java.util.List;
+
+public class GenericStack<T> {
+    private final List<T> elements = new ArrayList<>();
+
+    public void push(T item){
+        elements.add(item);
+    }
+
+    public T pop(){
+        if(isEmpty()) throw new EmptyStackException();
+        return elements.remove(elements.size() - 1);
+    }
+
+    public T peek(){
+        if(isEmpty()) throw new EmptyStackException();
+        return elements.get(elements.size() - 1);
+    }
+
+    public boolean isEmpty(){
+        return elements.isEmpty();
+    }
+
+    public void printElements(){
+        if(isEmpty()){
+            System.out.println("List is Empty: ");
+        } else {
+            System.out.println(elements);
+        }
+    }
+}
