@@ -4,7 +4,7 @@ public class Main {
     public static void main() {
         //start timer
         long startTimer = System.nanoTime();
-        Buffer buffer = new Buffer();
+       /* Buffer buffer = new Buffer();
 
         for(int i =1; i<=2; i++){
             int producerId = i;
@@ -22,6 +22,23 @@ public class Main {
                 }
             },"consumer"+i).start();
         }
+        */
+
+        BoundedBlockingQueue boundedBlockingQueue = new BoundedBlockingQueue(3);
+
+        Thread producerThread = new Thread(()->{
+            for(int i = 1; i<= 5; i++){
+                boundedBlockingQueue.put(i);
+            }
+        });
+
+        Thread consumerThread = new Thread(()->{
+            for (int i = 1; i<= 5; i++){
+                boundedBlockingQueue.take();
+            }
+        });
+        producerThread.start();
+        consumerThread.start();
         //end timer
         long endTimer = System.nanoTime();
 
