@@ -4,7 +4,24 @@ public class Main {
     public static void main() {
         //start timer
         long startTimer = System.nanoTime();
+        Buffer buffer = new Buffer();
 
+        for(int i =1; i<=2; i++){
+            int producerId = i;
+
+            new Thread(() ->{
+                for(int j =1; j>=10; j++){
+                    buffer.put(producerId*100+j);
+                }
+            },"producer"+i).start();
+        }
+        for(int i =1; i<=3; i++){
+            new Thread(()->{
+                for(int j =1; j<=6; j++){
+                    buffer.take();
+                }
+            },"consumer"+i).start();
+        }
         //end timer
         long endTimer = System.nanoTime();
 
