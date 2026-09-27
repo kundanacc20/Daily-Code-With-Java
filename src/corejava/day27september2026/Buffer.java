@@ -21,4 +21,19 @@ public class Buffer {
                 value);
         notifyAll();
     }
+    public synchronized int take(){
+        while (queue.isEmpty()) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return -1;
+            }
+        }
+            int value = queue.poll();
+            System.out.println(Thread.currentThread().getName()+" consumed "
+                    +value);
+            notifyAll();
+            return value;
+    }
 }
