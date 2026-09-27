@@ -10,7 +10,7 @@ public class Main {
             int producerId = i;
 
             new Thread(() ->{
-                for(int j =1; j>=10; j++){
+                for(int j =1; j<=10; j++){
                     buffer.put(producerId*100+j);
                 }
             },"producer"+i).start();
