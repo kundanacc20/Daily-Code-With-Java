@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Main {
-    public static Character findFirst(String s){
+    /*public static Character findFirst(String s){
         Map<Character,Integer> map = new LinkedHashMap<>();
 
         for(char ch : s.toCharArray()){
@@ -18,10 +18,15 @@ public class Main {
         }
         return null;
     }
+
+     */
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        System.out.println(findFirst("swiss"));
+        //System.out.println(findFirst("swiss"));
+
+        FirstNonRepeating firstNonRepeating = new FirstNonRepeating();
+        System.out.println(firstNonRepeating.firstNonRepeatingCharacter("swisw"));
         //end timer
         long endTimer = System.nanoTime();
 
@@ -35,7 +40,9 @@ public class Main {
 Find the First Non-Repeating Character
 Java Collections
 
-Interview question: Given a string, return the first character that appears exactly once. If no such character exists, return null.
+Interview question: Given a string, return
+the first character that appears exactly once.
+If no such character exists, return null.
 
 Example: swiss → w.
  */
