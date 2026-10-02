@@ -1,6 +1,7 @@
 package java8code.day02October2026;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -13,14 +14,29 @@ public class Main {
                 new Employee(1,"kundan","dev",27,50000,"male"),
                 new Employee(2,"narayan","architect",20,50000,"male"),
                 new Employee(3,"Harsht","NewReporter",29,60000,"male"),
-                new Employee(4,"komal","QA",28,40000,"female")
+                new Employee(4,"komal","QA",28,40000,"female"),
+                new Employee(5,"aditya","software Engineer",28,45000,"male"),
+                new Employee(6,"Arunima","dev",28,100000,"female"),
+                new Employee(7,"Anee","sofware dev",28,100000,"female"),
+                new Employee(8,"shruti","dentist",28,50000,"female")
         );
 
-        Map<String,Long> maleAndFemaleCount = emplist.stream()
+        /*Map<String,Long> maleAndFemaleCount = emplist.stream()
                 .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()
                 ));
 
-        System.out.println(maleAndFemaleCount);
+                System.out.println(maleAndFemaleCount);
+         */
+
+        /* List<Employee> empWithSalaryWithAbove50000 = emplist.stream()
+                        .filter(e -> e.salary()>=50000)
+                                .collect(Collectors.toList());
+
+        empWithSalaryWithAbove50000.forEach(System.out::println);
+
+         */
+
+
         //end timer
         long endTimer = System.nanoTime();
 
