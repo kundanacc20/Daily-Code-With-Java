@@ -33,12 +33,44 @@ public class Main {
 
          */
 //employee with second highest salary
-        Optional<Employee> secondHighestSalary = emplist.stream()
+       /* Optional<Employee> secondHighestSalary = emplist.stream()
                 .sorted(Comparator.comparingDouble(Employee::salary).reversed())
                 .skip(1)
                 .findFirst();
 
         secondHighestSalary.ifPresent(System.out::println);
+
+        */
+        /*
+        Problem: Find the top 2 highest-paid employees in each department whose salary is above 50,000.
+Requirements:
+- Filter employees whose salary is above 50,000.
+- Group employees by department.
+- Sort employees in each department by salary in descending order.
+- Find the top 2 highest-paid employees in each department.
+- Display the employee name, department, and salary.
+         */
+
+        Map<String,List<Employee>> result = emplist.stream()
+                .filter(e -> e.salary()>= 50000)
+                .collect(Collectors.groupingBy(
+                        Employee::Dept,
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                list -> list.stream()
+                                        .sorted(Comparator.comparingDouble(
+                                                Employee::salary
+                                        ).reversed())
+                                        .limit(2)
+                                        .collect(Collectors.toList())
+                        )
+                ));
+
+        result.forEach((department,employeeslist)->{
+            System.out.println("Department: "+department);
+            employeeslist.forEach(System.out::println);
+            System.out.println();
+        });
 
         //end timer
         long endTimer = System.nanoTime();
