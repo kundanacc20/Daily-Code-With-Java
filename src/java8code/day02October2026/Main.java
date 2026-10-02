@@ -75,9 +75,21 @@ Requirements:
         });
 
          */
-        List<String> result = emplist.stream()
+        /*List<String> result = emplist.stream()
                 .filter(e -> e.name().startsWith("A"))
                 .map(e->e.name())
+                .collect(Collectors.toList());
+        System.out.println(result);
+
+         */
+
+        List<String> result = emplist.stream()
+                .filter(e ->{
+                    return e.name().startsWith("N");
+                })
+                .map(e ->{
+                    return e.name();
+                })
                 .collect(Collectors.toList());
         System.out.println(result);
 
