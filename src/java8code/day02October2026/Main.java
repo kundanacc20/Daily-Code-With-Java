@@ -9,13 +9,13 @@ public class Main {
         long startTimer = System.nanoTime();
         List<Employee> emplist = Arrays.asList(
                 new Employee(1,"kundan","dev",27,50000,"male"),
-                new Employee(2,"narayan","architect",20,50000,"male"),
+                new Employee(2,"Narayan","architect",20,50000,"male"),
                 new Employee(3,"Harsht","NewReporter",29,60000,"male"),
-                new Employee(4,"komal","QA",28,40000,"female"),
-                new Employee(5,"aditya","software Engineer",28,45000,"male"),
+                new Employee(4,"Komal","QA",28,40000,"female"),
+                new Employee(5,"Aditya","software Engineer",28,45000,"male"),
                 new Employee(6,"Arunima","dev",28,100000,"female"),
                 new Employee(7,"Anee","sofware dev",28,100001,"female"),
-                new Employee(8,"shruti","dentist",28,50000,"female")
+                new Employee(8,"Shruti","dentist",28,50000,"female")
         );
 
         /*Map<String,Long> maleAndFemaleCount = emplist.stream()
@@ -51,7 +51,9 @@ Requirements:
 - Display the employee name, department, and salary.
          */
 
-        Map<String,List<Employee>> result = emplist.stream()
+        /*
+       Map<String,List<Employee>> result = emplist.stream()
+
                 .filter(e -> e.salary()>= 50000)
                 .collect(Collectors.groupingBy(
                         Employee::Dept,
@@ -71,6 +73,13 @@ Requirements:
             employeeslist.forEach(System.out::println);
             System.out.println();
         });
+
+         */
+        List<String> result = emplist.stream()
+                .filter(e -> e.name().startsWith("A"))
+                .map(e->e.name())
+                .collect(Collectors.toList());
+        System.out.println(result);
 
         //end timer
         long endTimer = System.nanoTime();
