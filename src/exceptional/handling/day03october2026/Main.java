@@ -6,8 +6,8 @@ public class Main {
         long startTimer = System.nanoTime();
 
         Bank bank = new Bank();
-        BankAccount account1 = new BankAccount(101,"kundan",50000);
-        BankAccount account2 = new BankAccount(102,"harshit",60000);
+        BankAccount account1 = new BankAccount(101,"kundan",20000);
+        BankAccount account2 = new BankAccount(102,"harshit",10000);
 
         bank.addAccount(account1);
         bank.addAccount(account2);
@@ -20,6 +20,27 @@ public class Main {
             System.out.println("Invalid Operation: "+e.getMessage());
         } finally {
             System.out.println("Transfer operation completed ");
+        }
+
+        //second transaction
+        try {
+            bank.transfer(101,102,20000);
+        } catch (InsufficientBalanceException | InvalidAmountException
+        | AccountNotFoundException | DailyLimitExceededException e){
+            System.out.println("Transfer failed "+e.getMessage());
+        } catch (IllegalArgumentException e){
+            System.out.println("Invalid operation: "+e.getMessage());
+        }
+
+        //3rd transaction
+
+        try {
+            bank.transfer(101,999,20000);
+        } catch (InsufficientBalanceException | InvalidAmountException
+        | AccountNotFoundException | DailyLimitExceededException e){
+            System.out.println("Transfer failed: "+ e.getMessage());
+        } catch (IllegalArgumentException e){
+            System.out.println("Invalid Operation : "+e.getMessage());
         }
         System.out.println("\nFinal account Details: ");
         account1.displayDetails();
