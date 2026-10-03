@@ -11,7 +11,7 @@ public class Main {
         long startTimer = System.nanoTime();
         String str = "Programming";
 
-        Map<Character,Long> map = str.chars()
+        /*Map<Character,Long> map = str.chars()
                 .mapToObj(c ->(char)c)
                 .collect(Collectors.groupingBy(
                         Function.identity(),
@@ -22,6 +22,15 @@ public class Main {
                 .filter(e->e.getValue() == 1)
                 .map(Map.Entry::getKey)
                 .forEach(System.out::println);
+
+        */
+
+        Character result = str.chars()
+                .mapToObj(c -> (char)c)
+                .filter(c -> str.indexOf(c)==str.lastIndexOf(c))
+                .findFirst()
+                .orElse(null);
+        System.out.println(result);
         //end timer
         long endTimer = System.nanoTime();
 
