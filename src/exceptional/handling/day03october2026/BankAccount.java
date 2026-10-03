@@ -20,7 +20,7 @@ public class BankAccount {
         balance = balance + amount;
         System.out.println("Deposit is successful: ");
     }
-    public void withdraw(int amount) throws InsufficientBalanceException
+    public void withdraw(double amount) throws InsufficientBalanceException
     , InvalidAmountException {
         if(amount <= 0){
             throw new InvalidAmountException(
