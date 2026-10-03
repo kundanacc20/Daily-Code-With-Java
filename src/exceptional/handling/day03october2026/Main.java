@@ -4,7 +4,13 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        BankAccount account = new BankAccount();
 
+        try {
+            account.withdraw(6000);
+        } catch (InsufficientBalanceException e){
+            System.out.println(e.getMessage());
+        }
         //end timer
         long endTimer = System.nanoTime();
 
