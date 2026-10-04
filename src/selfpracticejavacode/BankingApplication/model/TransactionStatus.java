@@ -1,4 +1,7 @@
 package selfpracticejavacode.BankingApplication.model;
 
-public class TransactionStatus {
+public enum TransactionStatus {
+    SUCCESS,
+    FAILED,
+    ROLLED_BACK
 }

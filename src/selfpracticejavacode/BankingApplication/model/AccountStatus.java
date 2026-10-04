@@ -1,4 +1,7 @@
 package selfpracticejavacode.BankingApplication.model;
 
-public class AccountStatus {
+public enum AccountStatus {
+    ACTIVE,
+    BLOCKED,
+    CLOSED
 }
