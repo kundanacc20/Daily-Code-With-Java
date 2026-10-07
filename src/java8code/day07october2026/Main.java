@@ -36,7 +36,7 @@ public class Main {
 
         System.out.println(findMaxValue(array));
         */
-
+/*
         int[] array = {1,8,11,3,15,2,9};
 
         int largestNumber = Integer.MIN_VALUE;
@@ -51,6 +51,19 @@ public class Main {
             }
         }
         System.out.println("Largest Number: " + largestNumber + " secondlargest: " + secondLargestNumber);
+
+ */
+     /*   int[] array = {1,8,11,3,15,2,9,4,14};
+
+        int largest = Arrays.stream(array).max().getAsInt();
+
+        int secondLargest = Arrays.stream(array)
+                .filter(n ->n != largest)
+                .max()
+                .getAsInt();
+        System.out.println("largest number: "+largest+" second largest: "+secondLargest);
+
+      */
         //end timer
         long endTimer = System.nanoTime();
 
