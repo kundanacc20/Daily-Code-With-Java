@@ -25,13 +25,17 @@ public class Main {
         }
         System.out.println(maxValue);
          */
-        int[] arrayNumber = {1,9,11,21,99,110,6,0,8,7,5};
+        /*int[] arrayNumber = {1,9,11,21,99,110,6,0,8,7,5};
 
         int max = Arrays.stream(arrayNumber).max().getAsInt();
         int min = Arrays.stream(arrayNumber).min().getAsInt();
         System.out.println("Min value: "+min);
         System.out.println("Max value : "+max);
+         */
+       /* int[] array = {1,11,77,12,0,999,9};
 
+        System.out.println(findMaxValue(array));
+        */
         //end timer
         long endTimer = System.nanoTime();
 
@@ -40,4 +44,10 @@ public class Main {
 
         System.out.println(programTime+" ms");
     }
+/*
+    private static int findMaxValue(int[] array) {
+        return Arrays.stream(array).max().getAsInt();
+    }
+ */
+
 }
