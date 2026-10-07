@@ -1,5 +1,7 @@
 package java8code.day07october2026;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
         //start timer
@@ -23,6 +25,13 @@ public class Main {
         }
         System.out.println(maxValue);
          */
+        int[] arrayNumber = {1,9,11,21,99,110,6,0,8,7,5};
+
+        int max = Arrays.stream(arrayNumber).max().getAsInt();
+        int min = Arrays.stream(arrayNumber).min().getAsInt();
+        System.out.println("Min value: "+min);
+        System.out.println("Max value : "+max);
+
         //end timer
         long endTimer = System.nanoTime();
 
