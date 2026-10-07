@@ -36,13 +36,28 @@ public class Main {
 
         System.out.println(findMaxValue(array));
         */
+
+        int[] array = {1,8,11,3,15,2,9};
+
+        int largestNumber = Integer.MIN_VALUE;
+        int secondLargestNumber = Integer.MIN_VALUE;
+
+        for(int i =0; i < array.length; i++){
+            if(array[i] > largestNumber){
+                secondLargestNumber = largestNumber;
+                largestNumber = array[i];
+            } else if(array[i] > secondLargestNumber && array[i] != largestNumber){
+                secondLargestNumber = array[i];
+            }
+        }
+        System.out.println("Largest Number: " + largestNumber + " secondlargest: " + secondLargestNumber);
         //end timer
         long endTimer = System.nanoTime();
 
         //program time
-        long programTime = (endTimer - startTimer)/1_000_000;
+        long programTime = (endTimer - startTimer) / 1_000_000;
 
-        System.out.println(programTime+" ms");
+        System.out.println(programTime + " ms");
     }
 /*
     private static int findMaxValue(int[] array) {
